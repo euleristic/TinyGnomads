@@ -30,7 +30,7 @@ public class MovementBehavior : MonoBehaviour
         {
             velocity = new Vector3(velocity.x, 0f, velocity.z).normalized * maxMoveSpeed + new Vector3(0f, velocity.y);
         }
-        rb.velocity = velocity;        
+        rb.velocity = velocity;
     }
 
     public void Move(InputAction.CallbackContext context)
