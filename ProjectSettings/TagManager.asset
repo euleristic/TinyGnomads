@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - InFront
   - Water
   - UI
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: InFront
+    uniqueID: 2515900877
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
