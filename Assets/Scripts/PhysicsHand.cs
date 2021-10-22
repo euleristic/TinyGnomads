@@ -12,19 +12,45 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] float rotateSpeed = 100f;
     [SerializeField] Vector3 positionOffset;
     [SerializeField] Vector3 rotationOffset;
+    Vector3 velocity;
+    Vector3 angularVelocity;
     Transform _followTarget;
     Rigidbody _body;
 
+    Quaternion Modulate360(Quaternion q)
+    {
+        return Quaternion.Euler(q.eulerAngles.x + (q.eulerAngles.x < 0f ? 360f : 0f),
+            q.eulerAngles.y + (q.eulerAngles.y < 0f ? 360f : 0f),
+            q.eulerAngles.z + (q.eulerAngles.z < 0f ? 360f : 0f));
+    }
+
+    Vector3 Modulate360(Vector3 v)
+    {
+        return new Vector3(v.x + (v.x < 0.0f ? 360f : 0f), v.y + (v.y < 0.0f ? 360f : 0f), v.z + (v.z < 0.0f ? 360f : 0f));
+    }
+
     void Start()
     {
+        _followTarget = followObject.transform;
         //Physics Movement
         _body = GetComponent<Rigidbody>();
         _body.collisionDetectionMode = CollisionDetectionMode.Continuous;
         _body.interpolation = RigidbodyInterpolation.Interpolate;
         _body.mass = 20f;
+        _body.maxAngularVelocity = 20f;
+        
+        //Teleport hands
+        _body.position = _followTarget.position;
+        _body.rotation = _followTarget.rotation;
+
     }
 
     void Update()
+    {
+        ReadFollow();
+    }
+
+    void FixedUpdate()
     {
 
         PhysicsMove();
@@ -32,9 +58,7 @@ public class PhysicsHand : MonoBehaviour
 
     public void Enable(GameObject followObject)
     {
-        _followTarget = followObject.transform;
-        _body.position = _followTarget.position;
-        _body.rotation = _followTarget.rotation;
+      
         gameObject.SetActive(true);
     }
 
@@ -43,18 +67,38 @@ public class PhysicsHand : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void PhysicsMove()
+    private void ReadFollow()
     {
-        //Position
-        var positionWithOffset = _followTarget.position + positionOffset;
+        //Position;
+        var positionWithOffset = _followTarget.TransformPoint(positionOffset);
         var distance = Vector3.Distance(positionWithOffset, transform.position);
-        _body.velocity = (positionWithOffset - transform.position).normalized * (followSpeed * distance);
-
+        velocity = (positionWithOffset - transform.position).normalized * (followSpeed * distance);
 
         //Rotation
         var rotationWithOffset = _followTarget.rotation * Quaternion.Euler(rotationOffset);
         var q = rotationWithOffset * Quaternion.Inverse(_body.rotation);
         q.ToAngleAxis(out float angle, out Vector3 axis);
-        _body.angularVelocity = angle * axis * Mathf.Deg2Rad * rotateSpeed;
+
+        if (angle > 180f)
+        {
+            angle -= 360f;
+        }
+        angularVelocity = angle * axis * Mathf.Deg2Rad * rotateSpeed;
+    }
+
+    private void PhysicsMove()
+    {
+
+        //Position
+        _body.velocity = velocity;
+
+
+        //Rotation
+        _body.angularVelocity = angularVelocity;
+
+        //var forwardWithOffset = Quaternion.Euler(rotationOffset) * _followTarget.up;
+        //var crossProduct = Vector3.Cross(forwardWithOffset, _body.rotation * Vector3.up);
+
+        //_body.angularVelocity = -crossProduct * rotateSpeed;
     }
 }
