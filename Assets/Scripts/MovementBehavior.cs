@@ -19,7 +19,7 @@ public class MovementBehavior : MonoBehaviour
     //jumping
     public bool grounded = true;
     public bool readyToJump = true;
-    float jumpForce = 2.0f;
+    float jumpForce = 2.5f;
     float jumpCooldown = 0.05f;
 
     void Start()
@@ -39,6 +39,11 @@ public class MovementBehavior : MonoBehaviour
         }
         rb.velocity = velocity;
         body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
+
+        if (rb.velocity.y < -1.4f)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, -1.4f, rb.velocity.z);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
