@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7797701417409775544}
   - component: {fileID: 7797701417409775551}
   - component: {fileID: 2070446476345599665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gnome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
