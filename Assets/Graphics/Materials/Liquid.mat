@@ -28,7 +28,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 3001
   stringTagMap:
     MotionVector: User
     RenderType: Transparent
@@ -148,7 +148,7 @@ Material:
     m_Floats:
     - Vector1_2de87a62337c41cc805eaf8739c58c44: 0.5
     - Vector1_484e5014dafa473ebe4dcb15de5ffd92: 0.2
-    - Vector1_59f77103698c4566975265f1011ec748: -0.04
+    - Vector1_59f77103698c4566975265f1011ec748: -1.61
     - Vector1_9149facbdc884734a945b478c7ceb46f: 0
     - Vector1_b7d0e401cf874a1998ab26e49985d976: 0
     - _AORemapMax: 1
@@ -161,12 +161,12 @@ Material:
     - _AlphaCutoffPostpass: 0.5
     - _AlphaCutoffPrepass: 0.5
     - _AlphaCutoffShadow: 0.5
-    - _AlphaDstBlend: 10
+    - _AlphaDstBlend: 1
     - _AlphaSrcBlend: 1
     - _AlphaToMask: 1
     - _AlphaToMaskInspectorValue: 1
     - _Anisotropy: 0
-    - _BlendMode: 0
+    - _BlendMode: 1
     - _CoatMask: 0
     - _CullMode: 2
     - _CullModeForward: 2
@@ -182,7 +182,7 @@ Material:
     - _DisplacementMode: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 1
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _EmissiveColorMode: 1
     - _EmissiveExposureWeight: 1
     - _EmissiveIntensity: 1
@@ -251,7 +251,7 @@ Material:
     - _TransparentCullMode: 2
     - _TransparentDepthPostpassEnable: 0
     - _TransparentDepthPrepassEnable: 0
-    - _TransparentSortPriority: 0
+    - _TransparentSortPriority: 1
     - _TransparentWritingMotionVec: 0
     - _TransparentZWrite: 0
     - _UVBase: 0
