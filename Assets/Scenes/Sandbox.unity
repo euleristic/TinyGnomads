@@ -204,7 +204,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149221366642}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -376,7 +376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93934745}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -760,7 +760,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121752772}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -6238,7 +6238,7 @@ GameObject:
   - component: {fileID: 283096487}
   - component: {fileID: 283096486}
   - component: {fileID: 283096485}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6266,7 +6266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283096483}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -6451,7 +6451,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149445169697}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -11660,7 +11660,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149366638205}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -11825,7 +11825,7 @@ MonoBehaviour:
   m_IgnoreTag: 
   m_TransparentLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_MinimumDistanceFromTarget: 0.01
   m_AvoidObstacles: 1
   m_DistanceLimit: 0
@@ -16860,7 +16860,7 @@ GameObject:
   - component: {fileID: 398083370}
   - component: {fileID: 398083369}
   - component: {fileID: 398083368}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16888,7 +16888,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 398083366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -17228,6 +17228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chr Vase
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 990543b8fe361394698c5620a5be37d1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 990543b8fe361394698c5620a5be37d1, type: 3}
 --- !u!1 &478716162 stripped
@@ -17279,7 +17284,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149531725562}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -18039,7 +18044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &612371646
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -23746,7 +23751,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148688071560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -38757,7 +38762,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149078848816}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -49783,7 +49788,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148206060932}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -49925,7 +49930,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148398909560}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -50289,7 +50294,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148292052338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -50418,12 +50423,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!1 &1429212701 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7722134710201842359, guid: efef19a6046a72a43abd05177636eeb8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1805168588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1473594872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50431,7 +50430,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148346681511}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -50750,7 +50749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148531313498}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -50893,7 +50892,7 @@ GameObject:
   - component: {fileID: 1533222215}
   - component: {fileID: 1533222214}
   - component: {fileID: 1533222213}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50921,7 +50920,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533222211}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -56349,7 +56348,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149508399467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -61416,41 +61415,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 120746252526730015, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: positionOffset.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 396061575685007454, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: rotateSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 396061575685007454, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: positionOffset.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711813855593040657, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8f9418ebedfd04d41a8ab8a1a0ebaf46, type: 2}
-    - target: {fileID: 1811497629748136539, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: rotateSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1811497629748136539, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: followObject
-      value: 
-      objectReference: {fileID: 1429212701}
-    - target: {fileID: 5001245473563433643, guid: efef19a6046a72a43abd05177636eeb8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 7722134710055584163, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: m_Name
@@ -61510,6 +61474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7722134710372992798, guid: efef19a6046a72a43abd05177636eeb8,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 439
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efef19a6046a72a43abd05177636eeb8, type: 3}
@@ -61742,7 +61711,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147825940593}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -61885,7 +61854,7 @@ GameObject:
   - component: {fileID: 1896430962}
   - component: {fileID: 1896430961}
   - component: {fileID: 1896430960}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61913,7 +61882,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896430958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -62327,7 +62296,7 @@ GameObject:
   - component: {fileID: 1968663447}
   - component: {fileID: 1968663446}
   - component: {fileID: 1968663445}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62355,7 +62324,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1968663443}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -62540,7 +62509,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147767793369}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -63066,6 +63035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_FancyCandle
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 962625141bd535f41a4ab9a3293038b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962625141bd535f41a4ab9a3293038b4, type: 3}
@@ -67986,7 +67960,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024255474}
   m_LocalRotation: {x: 0, y: 1, z: -0, w: -0.00000035762784}
-  m_LocalPosition: {x: -5.308291, y: -1.3214104, z: 5.9082117}
+  m_LocalPosition: {x: -5.3047533, y: -1.2789999, z: 6.0877323}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68120,7 +68094,7 @@ GameObject:
   - component: {fileID: 2036040569}
   - component: {fileID: 2036040568}
   - component: {fileID: 2036040567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68148,7 +68122,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036040565}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -68403,6 +68377,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_FancyCandle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 962625141bd535f41a4ab9a3293038b4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 962625141bd535f41a4ab9a3293038b4, type: 3}
@@ -73789,7 +73768,7 @@ GameObject:
   - component: {fileID: 2139810904}
   - component: {fileID: 2139810903}
   - component: {fileID: 2139810902}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73817,7 +73796,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2139810900}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -74247,7 +74226,7 @@ GameObject:
   - component: {fileID: 1968860044}
   - component: {fileID: 1968860043}
   - component: {fileID: 1968860042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74268,7 +74247,7 @@ GameObject:
   - component: {fileID: 1891869988}
   - component: {fileID: 1891869987}
   - component: {fileID: 1891869986}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74308,7 +74287,7 @@ GameObject:
   - component: {fileID: 1333524697}
   - component: {fileID: 1333524696}
   - component: {fileID: 1333524695}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74329,7 +74308,7 @@ GameObject:
   - component: {fileID: 1419499559}
   - component: {fileID: 1419499558}
   - component: {fileID: 1419499557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74350,7 +74329,7 @@ GameObject:
   - component: {fileID: 1473594874}
   - component: {fileID: 1473594873}
   - component: {fileID: 1473594872}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74371,7 +74350,7 @@ GameObject:
   - component: {fileID: 1392006445}
   - component: {fileID: 1392006444}
   - component: {fileID: 1392006443}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74392,7 +74371,7 @@ GameObject:
   - component: {fileID: 1523877391}
   - component: {fileID: 1523877390}
   - component: {fileID: 1523877389}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74413,7 +74392,7 @@ GameObject:
   - component: {fileID: 742168285}
   - component: {fileID: 742168284}
   - component: {fileID: 742168283}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74434,7 +74413,7 @@ GameObject:
   - component: {fileID: 997279845}
   - component: {fileID: 997279844}
   - component: {fileID: 997279843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74455,7 +74434,7 @@ GameObject:
   - component: {fileID: 66463271}
   - component: {fileID: 66463270}
   - component: {fileID: 66463269}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74476,7 +74455,7 @@ GameObject:
   - component: {fileID: 347011888}
   - component: {fileID: 347011887}
   - component: {fileID: 347011886}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74516,7 +74495,7 @@ GameObject:
   - component: {fileID: 291450740}
   - component: {fileID: 291450739}
   - component: {fileID: 291450738}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74537,7 +74516,7 @@ GameObject:
   - component: {fileID: 1722969088}
   - component: {fileID: 1722969087}
   - component: {fileID: 1722969089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74558,7 +74537,7 @@ GameObject:
   - component: {fileID: 511177647}
   - component: {fileID: 511177646}
   - component: {fileID: 511177645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Bottle With Label 02 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74579,7 +74558,7 @@ GameObject:
   - component: {fileID: 1142862077966514270}
   - component: {fileID: 1142862077966514269}
   - component: {fileID: 1142862077966514268}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wine Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74593,7 +74572,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142862077966514267}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 

@@ -263,12 +263,12 @@ MonoBehaviour:
   rotateSpeed: 100
   positionOffset: {x: 0, y: 0, z: 0}
   rotationOffset: {x: 0, y: 0, z: -90}
-  palm: {fileID: 0}
+  palm: {fileID: 3443870320747969855}
   reachDistance: 0.2
   jointDistance: 0.5
   grabbableLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &5717702059974562097
 GameObject:
   m_ObjectHideFlags: 0

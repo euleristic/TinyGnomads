@@ -594,7 +594,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459945753613469}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459945822248336}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946044154067}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946162542057}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946179837009}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946194862794}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946458640540}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262459946694935521}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -6626,7 +6626,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2205423131448620488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -6759,7 +6759,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4203024961626303444
 Transform:
   m_ObjectHideFlags: 0
@@ -6846,7 +6846,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7612611616307228942}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
@@ -7025,6 +7025,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Napkins (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a923661407eb0140ad33b5bbb6ee417,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5a64fcee9e87e404bb63d6849897cae1,
         type: 3}
       propertyPath: m_Layer
@@ -7197,6 +7202,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plate
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a64fcee9e87e404bb63d6849897cae1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a64fcee9e87e404bb63d6849897cae1, type: 3}
 --- !u!4 &1931754026573584731 stripped
@@ -7218,6 +7228,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476623035094}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: e5614615cbf101b49b9148809d7c10bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5a38155837599841984c34363741f00,
         type: 3}
       propertyPath: m_RootOrder
@@ -7278,7 +7293,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bowl (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: e5614615cbf101b49b9148809d7c10bf,
+    - target: {fileID: 919132149155446097, guid: e5a38155837599841984c34363741f00,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -7364,6 +7379,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Spoon
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5614615cbf101b49b9148809d7c10bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 27c2e03184bc88145b32204acffe5e10,
         type: 3}
       propertyPath: m_Layer
@@ -7390,6 +7410,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476623035094}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7450,7 +7475,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fork (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
+    - target: {fileID: 919132149155446097, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -7476,6 +7501,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476623035094}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 27c2e03184bc88145b32204acffe5e10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5a64fcee9e87e404bb63d6849897cae1,
         type: 3}
       propertyPath: m_RootOrder
@@ -7536,7 +7566,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Plate (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 27c2e03184bc88145b32204acffe5e10,
+    - target: {fileID: 919132149155446097, guid: 5a64fcee9e87e404bb63d6849897cae1,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -7562,6 +7592,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476623035094}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e05afe8554e35a04b95c20abb92bab01,
         type: 3}
       propertyPath: m_RootOrder
@@ -7622,7 +7657,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Knife (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b,
+    - target: {fileID: 919132149155446097, guid: e05afe8554e35a04b95c20abb92bab01,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -7648,6 +7683,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882475035291834}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e5a38155837599841984c34363741f00,
         type: 3}
       propertyPath: m_RootOrder
@@ -7708,7 +7748,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Bowl
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
+    - target: {fileID: 919132149155446097, guid: e5a38155837599841984c34363741f00,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -7885,6 +7925,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Spoon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5614615cbf101b49b9148809d7c10bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5614615cbf101b49b9148809d7c10bf, type: 3}
 --- !u!1 &1262459945225902627 stripped
@@ -7906,6 +7951,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476623035094}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47277d36a59d3034485355585b004519,
         type: 3}
       propertyPath: m_RootOrder
@@ -7966,7 +8016,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_SaltPepper (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
+    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -8052,6 +8102,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Fork
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28abfd40fdaa9bf41aa450ba14f0eb7b, type: 3}
 --- !u!4 &1931754025272454619 stripped
@@ -8073,6 +8128,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882475035291834}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 47277d36a59d3034485355585b004519,
         type: 3}
       propertyPath: m_RootOrder
@@ -8133,7 +8193,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_SaltPepper
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
+    - target: {fileID: 919132149155446097, guid: 47277d36a59d3034485355585b004519,
         type: 3}
       propertyPath: m_Layer
       value: 7
@@ -8159,6 +8219,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108882476931103293}
     m_Modifications:
+    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 43e58faf37c276a49a0fba70f5254fe9,
         type: 3}
       propertyPath: m_RootOrder
@@ -8218,11 +8283,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Waiter Cart
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 068db3ab905d0dd4b86cdbd338b00285,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43e58faf37c276a49a0fba70f5254fe9, type: 3}
