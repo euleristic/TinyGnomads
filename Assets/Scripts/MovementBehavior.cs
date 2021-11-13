@@ -20,12 +20,18 @@ public class MovementBehavior : MonoBehaviour
     public bool grounded = true;
     public bool readyToJump = true;
     float jumpForce = 2.5f;
-    float jumpCooldown = 0.05f;
+    float jumpCooldown = 0.1f;
+
+    public BoxCollider gnome_collider;
+    private float gnome_scale_factor;
 
     void Start()
     {
         maxMoveSpeedSqr = maxMoveSpeed * maxMoveSpeed;
         rb = GetComponent<Rigidbody>();
+
+        //gnome_collider = GetComponentInChildren<BoxCollider>();
+        gnome_scale_factor = Mathf.Max(transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
     // Update is called once per frame
@@ -55,7 +61,7 @@ public class MovementBehavior : MonoBehaviour
     {
         if (context.performed)
         {
-            if (/*grounded && */readyToJump)
+            if (isGrounded() && readyToJump)
             {
                 readyToJump = false;
 
@@ -74,12 +80,56 @@ public class MovementBehavior : MonoBehaviour
 
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
+            else if (!isGrounded())
+            {
+                if (readyToJump)
+                {
+                    readyToJump = false;
+                    Vector3 vel = rb.velocity;
+                    vel.y = 0.0f;
+                    rb.velocity = new Vector3(rb.velocity.x, vel.y, rb.velocity.z);
+                    rb.velocity += Vector3.up * jumpForce;
+                }
+            }
         }
     }
 
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private bool isGrounded()
+    {
+        float gnome_height = gnome_collider.size.y * gnome_scale_factor;
+        float gnome_width = gnome_collider.size.z * gnome_scale_factor;
+        Collider[] colliders = new Collider[2];
+
+        int layer_mask = ~((1 << gameObject.layer));
+
+        Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
+        float sphere_radius = gnome_width/2 - gnome_width * 0.1f;
+        Physics.OverlapSphereNonAlloc(sphere_position, sphere_radius, colliders, layer_mask, QueryTriggerInteraction.Ignore);
+        //Debug.Log(colliders.Length);
+        if (colliders[0] != null)
+        {
+            readyToJump = true;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        float gnome_height = gnome_collider.size.y * gnome_scale_factor;
+        float gnome_width = gnome_collider.size.z * gnome_scale_factor;
+        Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
+        float sphere_radius = gnome_width/2 - gnome_width * 0.1f;
+        Gizmos.DrawSphere(sphere_position, sphere_radius);
     }
 }
 
