@@ -25,6 +25,10 @@ public class MovementBehavior : MonoBehaviour
     public BoxCollider gnome_collider;
     private float gnome_scale_factor;
 
+    //animation
+    public Animator animator;
+    private float gnome_forward_velocity;
+
     void Start()
     {
         maxMoveSpeedSqr = maxMoveSpeed * maxMoveSpeed;
@@ -55,6 +59,19 @@ public class MovementBehavior : MonoBehaviour
         //{
         //    look_at.rotation = Quaternion.Euler(look_at.rotation.x, look_at.rotation.y, 0.0f);
         //}
+
+        //animator stuff
+        gnome_forward_velocity = Vector3.Dot(rb.velocity, body.transform.forward / maxMoveSpeed);
+        animator.SetFloat("Velocity", gnome_forward_velocity);
+
+        if(isGrounded())
+        {
+            animator.SetBool("Grounded", true);
+        }
+        else if(!isGrounded())
+        {
+            animator.SetBool("Grounded", false);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -75,13 +92,8 @@ public class MovementBehavior : MonoBehaviour
                 vel.y = 0.0f;
                 rb.velocity = new Vector3(rb.velocity.x, vel.y, rb.velocity.z);
                 rb.velocity += Vector3.up * jumpForce;
-
-                //If jumping while falling, reset y velocity.
-                //Vector3 vel = rb.velocity;
-                //if (rb.velocity.y < 0.5f)
-                //    rb.velocity = new Vector3(vel.x, 0, vel.z);
-                //else if (rb.velocity.y > 0)
-                //    rb.velocity = new Vector3(vel.x, vel.y / 2, vel.z);
+                //animate
+                animator.Play("Jump");
 
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
@@ -94,6 +106,7 @@ public class MovementBehavior : MonoBehaviour
                     vel.y = 0.0f;
                     rb.velocity = new Vector3(rb.velocity.x, vel.y, rb.velocity.z);
                     rb.velocity += Vector3.up * jumpForce;
+                    animator.Play("Double Jump");
                 }
             }
         }

@@ -14469,7 +14469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &857658606
 Transform:
   m_ObjectHideFlags: 0
@@ -14565,9 +14565,9 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -51417,6 +51417,11 @@ PrefabInstance:
       propertyPath: followSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 396061575685007454, guid: efef19a6046a72a43abd05177636eeb8,
+        type: 3}
+      propertyPath: grabbableLayer.m_Bits
+      value: 640
+      objectReference: {fileID: 0}
     - target: {fileID: 1811497629748136539, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: followSpeed
@@ -52453,7 +52458,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -68477,6 +68482,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2070446476345599665, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1586435098}
     - target: {fileID: 2070446476345599665, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
       propertyPath: gnome_collider
