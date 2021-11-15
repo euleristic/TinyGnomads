@@ -250,6 +250,7 @@ MonoBehaviour:
   body: {fileID: 8133373711322490186}
   grounded: 1
   readyToJump: 1
+  gnome_collider: {fileID: 0}
 --- !u!1 &7797701417805459446
 GameObject:
   m_ObjectHideFlags: 0

@@ -50,6 +50,11 @@ public class MovementBehavior : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, -1.4f, rb.velocity.z);
         }
+
+        //if (look_at.rotation.z != 0.0f)
+        //{
+        //    look_at.rotation = Quaternion.Euler(look_at.rotation.x, look_at.rotation.y, 0.0f);
+        //}
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -108,7 +113,7 @@ public class MovementBehavior : MonoBehaviour
         int layer_mask = ~((1 << gameObject.layer));
 
         Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
-        float sphere_radius = gnome_width/2 - gnome_width * 0.1f;
+        float sphere_radius = gnome_width/2 - gnome_width * 0.05f;
         Physics.OverlapSphereNonAlloc(sphere_position, sphere_radius, colliders, layer_mask, QueryTriggerInteraction.Ignore);
         //Debug.Log(colliders.Length);
         if (colliders[0] != null)
@@ -128,7 +133,7 @@ public class MovementBehavior : MonoBehaviour
         float gnome_height = gnome_collider.size.y * gnome_scale_factor;
         float gnome_width = gnome_collider.size.z * gnome_scale_factor;
         Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
-        float sphere_radius = gnome_width/2 - gnome_width * 0.1f;
+        float sphere_radius = gnome_width/2 - gnome_width * 0.05f;
         Gizmos.DrawSphere(sphere_position, sphere_radius);
     }
 }
