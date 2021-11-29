@@ -1043,6 +1043,11 @@ PrefabInstance:
       objectReference: {fileID: 7722134708924299726}
     - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
         type: 3}
+      propertyPath: followSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
+        type: 3}
       propertyPath: rotateSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -1055,6 +1060,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reachDistance
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
+        type: 3}
+      propertyPath: grabbableLayer.m_Bits
+      value: 640
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec9db584ae38a4448768489006ec637, type: 3}
@@ -1143,6 +1153,11 @@ PrefabInstance:
       objectReference: {fileID: 7722134710201842354}
     - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
         type: 3}
+      propertyPath: followSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
+        type: 3}
       propertyPath: rotateSpeed
       value: 20
       objectReference: {fileID: 0}
@@ -1155,6 +1170,11 @@ PrefabInstance:
         type: 3}
       propertyPath: reachDistance
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038666169255731144, guid: aec9db584ae38a4448768489006ec637,
+        type: 3}
+      propertyPath: grabbableLayer.m_Bits
+      value: 640
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aec9db584ae38a4448768489006ec637, type: 3}

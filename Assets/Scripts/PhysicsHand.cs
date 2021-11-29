@@ -25,7 +25,7 @@ public class PhysicsHand : MonoBehaviour
     //Contact point
     [SerializeField] Transform palm;
     [SerializeField] float reachDistance = 0.1f, jointDistance = 0.05f;
-    [SerializeField] LayerMask grabbableLayer;
+    public LayerMask grabbableLayer;
 
     private bool isGrabbing;
     private GameObject heldObject;
