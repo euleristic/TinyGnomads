@@ -26,6 +26,9 @@ public class GrabThrowBehaviour : MonoBehaviour
 
     private bool game_started;
 
+    //animation
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +46,9 @@ public class GrabThrowBehaviour : MonoBehaviour
         gnome_lenght = movement_behavior.gnome_lenght;
         gnome_height = movement_behavior.gnome_height;
         gnome_width = movement_behavior.gnome_width;
+
+        //animation
+        animator = movement_behavior.animator;
     }
 
     // Update is called once per frame
@@ -98,6 +104,7 @@ public class GrabThrowBehaviour : MonoBehaviour
     private void GrabObject(Rigidbody objectBody)
     {
         isGrabbing = true;
+        animator.SetLayerWeight(1, 1);
 
         ////create a grab point
         //held_grab_transform = new GameObject().transform;
@@ -181,6 +188,7 @@ public class GrabThrowBehaviour : MonoBehaviour
         }
 
         isGrabbing = false;
+        animator.SetLayerWeight(1, 0);
     }
 
     void OnDrawGizmos()

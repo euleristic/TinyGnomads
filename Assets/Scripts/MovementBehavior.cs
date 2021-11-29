@@ -30,7 +30,7 @@ public class MovementBehavior : MonoBehaviour
 
     //animation
     public Animator animator;
-    private float gnome_forward_velocity;
+    private float gnome_forward_velocity, gnome_horizontal_velocity;
 
     void Start()
     {
@@ -93,7 +93,8 @@ public class MovementBehavior : MonoBehaviour
         gnome_forward_velocity = Vector3.Dot(rb.velocity, body.transform.forward / maxMoveSpeed);
         animator.SetFloat("Velocity", gnome_forward_velocity);
 
-
+        gnome_horizontal_velocity = Vector3.Dot(rb.velocity, body.transform.right / maxMoveSpeed);
+        animator.SetFloat("SideVelocity", gnome_horizontal_velocity);
     }
 
     public void Move(InputAction.CallbackContext context)
