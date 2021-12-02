@@ -9772,7 +9772,8 @@ GameObject:
   - component: {fileID: 7797701417409775544}
   - component: {fileID: 7797701417409775551}
   - component: {fileID: 2070446476345599665}
-  m_Layer: 7
+  - component: {fileID: 1807084613}
+  m_Layer: 9
   m_Name: Gnome
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9912,10 +9913,6 @@ MonoBehaviour:
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: d89d14eb-e5f0-4b07-bf6c-1056d16f22e7
-    m_ActionName: Player/Fire[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: b40e193b-365e-44de-90cd-0ac31a78ee1c
     m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -9970,6 +9967,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d34fb906-3221-4cb5-8246-b8c7393794cd
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1807084613}
+        m_TargetAssemblyTypeName: GrabThrowBehaviour, Assembly-CSharp
+        m_MethodName: Grab
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f9dd94a5-bb9b-4c46-8c73-5883ad631a85
+    m_ActionName: Player/Grab[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -10005,12 +10018,25 @@ MonoBehaviour:
   look_at: {fileID: 7797701417805459445}
   maxMoveSpeed: 0.5
   acceleration: 5
-  decceleration: 0
+  decceleration: 1
   body: {fileID: 8133373711322490186}
-  grounded: 1
-  readyToJump: 1
   gnome_collider: {fileID: 3648367469040620359}
   animator: {fileID: 1605092793836533922}
+--- !u!114 &1807084613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7797701417409775488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c354b0e8deae24ea855d3773c70c37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabbableLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &7797701417805459446
 GameObject:
   m_ObjectHideFlags: 0
@@ -19727,10 +19753,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8481810204655726790}
-  - component: {fileID: 7405899099606532627}
-  - component: {fileID: 2956019342937899732}
   - component: {fileID: 3648367469040620359}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Gnome Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19753,55 +19777,6 @@ Transform:
   m_Father: {fileID: 7797701417409775495}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7405899099606532627
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133373711322490186}
-  m_Mesh: {fileID: -2432090755550338912, guid: d42acd41d00dc314fa3f3906b1170eb5, type: 3}
---- !u!23 &2956019342937899732
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8133373711322490186}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 257
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 90fa3530a11e90748a7e03f878b1c92c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &3648367469040620359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19813,7 +19788,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.048768, y: 0.08079401, z: 0.022528}
+  m_Size: {x: 0.05, y: 0.08079401, z: 0.05}
   m_Center: {x: 0, y: 0.024494002, z: 0}
 --- !u!1001 &4342032713615480878
 PrefabInstance:

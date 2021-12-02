@@ -12,30 +12,42 @@ public class MovementBehavior : MonoBehaviour
     [SerializeField] float decceleration;
 
     float maxMoveSpeedSqr;
-    Rigidbody rb;
-    [SerializeField] GameObject body;
+    [System.NonSerialized] public Rigidbody rb;
+    public GameObject body;
     Vector2 movementInputVector;
+    private bool has_input_move;
 
     //jumping
-    public bool grounded = true;
-    public bool readyToJump = true;
-    float jumpForce = 2.5f;
+    [System.NonSerialized] bool grounded = true;
+    [System.NonSerialized] bool readyToJump = true;
+    float jumpForce = 5.0f;
     float jumpCooldown = 0.1f;
+    private bool has_input_jump;
 
     public BoxCollider gnome_collider;
-    private float gnome_scale_factor;
+    [System.NonSerialized] public float gnome_scale_factor;
+    [System.NonSerialized] public float gnome_height, gnome_lenght, gnome_width;
+
+    //being grabbed
+    [System.NonSerialized] public bool is_grabbed;
+    private bool rotation_reset;
 
     //animation
     public Animator animator;
-    private float gnome_forward_velocity;
+    private float gnome_forward_velocity, gnome_horizontal_velocity;
 
     void Start()
     {
         maxMoveSpeedSqr = maxMoveSpeed * maxMoveSpeed;
         rb = GetComponent<Rigidbody>();
+    }
 
-        //gnome_collider = GetComponentInChildren<BoxCollider>();
+    private void Awake()
+    {
         gnome_scale_factor = Mathf.Max(transform.localScale.x, transform.localScale.y, transform.localScale.z);
+        gnome_height = gnome_collider.size.y * gnome_scale_factor;
+        gnome_lenght = gnome_collider.size.z * gnome_scale_factor;
+        gnome_width = gnome_collider.size.x * gnome_scale_factor;
     }
 
     // Update is called once per frame
@@ -43,16 +55,40 @@ public class MovementBehavior : MonoBehaviour
     {
         Vector3 velocity = rb.velocity;
         velocity += Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f) * new Vector3(movementInputVector.x, 0.0f, movementInputVector.y) * acceleration * Time.deltaTime;
+
+        //max speed
         if (new Vector2(velocity.x, velocity.z).sqrMagnitude > maxMoveSpeedSqr)
         {
             velocity = new Vector3(velocity.x, 0f, velocity.z).normalized * maxMoveSpeed + new Vector3(0f, velocity.y);
         }
         rb.velocity = velocity;
-        body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
+        if(!is_grabbed)
+        {
+            body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
+        }
+
+
+        //decceleration
+        if(isGrounded() && has_input_move == false && has_input_jump == false )
+        {
+            rb.velocity = rb.velocity * decceleration * Time.deltaTime;
+        }
+
+        //slow fall
 
         if (rb.velocity.y < -1.4f)
         {
             rb.velocity = new Vector3(rb.velocity.x, -1.4f, rb.velocity.z);
+        }
+
+
+        if (isGrounded() && rb.velocity.y < 0)
+        {
+            animator.SetBool("Grounded", true);
+        }
+        else/* if (!isGrounded() && rb.velocity.y > 0)*/
+        {
+            animator.SetBool("Grounded", false);
         }
 
         //if (look_at.rotation.z != 0.0f)
@@ -64,23 +100,37 @@ public class MovementBehavior : MonoBehaviour
         gnome_forward_velocity = Vector3.Dot(rb.velocity, body.transform.forward / maxMoveSpeed);
         animator.SetFloat("Velocity", gnome_forward_velocity);
 
-        if(isGrounded())
+        gnome_horizontal_velocity = Vector3.Dot(rb.velocity, body.transform.right / maxMoveSpeed);
+        animator.SetFloat("SideVelocity", gnome_horizontal_velocity);
+
+        if(is_grabbed)
         {
-            animator.SetBool("Grounded", true);
+            animator.SetBool("isGrabbed", true);
+            rotation_reset = false;
+            if (rb.constraints != RigidbodyConstraints.None)
+            {
+                rb.constraints = RigidbodyConstraints.None;
+            }
         }
-        else if(!isGrounded())
+        else if (!is_grabbed && !rotation_reset)
         {
-            animator.SetBool("Grounded", false);
+            rb.rotation = Quaternion.Euler(0, rb.rotation.y, 0);
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+            rotation_reset = true;
+            animator.SetBool("isGrabbed", false);
         }
     }
 
     public void Move(InputAction.CallbackContext context)
     {
         movementInputVector = context.ReadValue<Vector2>();
+        has_input_move = context.performed;
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
+        has_input_jump = context.performed;
+        //clicked jump
         if (context.performed)
         {
             if (isGrounded() && readyToJump)
@@ -88,10 +138,11 @@ public class MovementBehavior : MonoBehaviour
                 readyToJump = false;
 
                 //Add jump forces
-                Vector3 vel = rb.velocity;
-                vel.y = 0.0f;
-                rb.velocity = new Vector3(rb.velocity.x, vel.y, rb.velocity.z);
-                rb.velocity += Vector3.up * jumpForce;
+
+                rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                //rb.velocity += Vector3.up * jumpForce;
+                rb.AddRelativeForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
                 //animate
                 animator.Play("Jump");
 
@@ -102,10 +153,11 @@ public class MovementBehavior : MonoBehaviour
                 if (readyToJump)
                 {
                     readyToJump = false;
-                    Vector3 vel = rb.velocity;
-                    vel.y = 0.0f;
-                    rb.velocity = new Vector3(rb.velocity.x, vel.y, rb.velocity.z);
-                    rb.velocity += Vector3.up * jumpForce;
+
+                    rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+                    //rb.velocity += Vector3.up * jumpForce;
+                    rb.AddRelativeForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
                     animator.Play("Double Jump");
                 }
             }
@@ -119,34 +171,33 @@ public class MovementBehavior : MonoBehaviour
 
     private bool isGrounded()
     {
-        float gnome_height = gnome_collider.size.y * gnome_scale_factor;
-        float gnome_width = gnome_collider.size.z * gnome_scale_factor;
         Collider[] colliders = new Collider[2];
 
         int layer_mask = ~((1 << gameObject.layer));
 
         Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
-        float sphere_radius = gnome_width/2 - gnome_width * 0.05f;
+        float sphere_radius = gnome_lenght / 2 - gnome_lenght * 0.05f;
         Physics.OverlapSphereNonAlloc(sphere_position, sphere_radius, colliders, layer_mask, QueryTriggerInteraction.Ignore);
         //Debug.Log(colliders.Length);
         if (colliders[0] != null)
         {
             readyToJump = true;
+            animator.SetBool("Grounded", true);
             return true;
         }
         else
         {
+            animator.SetBool("Grounded", false);
             return false;
         }
+
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.cyan;
-        float gnome_height = gnome_collider.size.y * gnome_scale_factor;
-        float gnome_width = gnome_collider.size.z * gnome_scale_factor;
         Vector3 sphere_position = transform.position + new Vector3(0, -gnome_height * 0.2f, 0);
-        float sphere_radius = gnome_width/2 - gnome_width * 0.05f;
+        float sphere_radius = gnome_lenght / 2 - gnome_lenght * 0.05f;
         Gizmos.DrawSphere(sphere_position, sphere_radius);
     }
 }

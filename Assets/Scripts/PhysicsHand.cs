@@ -25,12 +25,15 @@ public class PhysicsHand : MonoBehaviour
     //Contact point
     [SerializeField] Transform palm;
     [SerializeField] float reachDistance = 0.1f, jointDistance = 0.05f;
-    [SerializeField] LayerMask grabbableLayer;
+    public LayerMask grabbableLayer;
 
     private bool isGrabbing;
     private GameObject heldObject;
     private Transform grabPoint;
     private FixedJoint joint1, joint2;
+
+    //gnome grabs
+    public MovementBehavior movement_behavior;
 
 
 
@@ -157,6 +160,10 @@ public class PhysicsHand : MonoBehaviour
     private IEnumerator GrabObject(Collider collider, Rigidbody objectBody)
     {
         isGrabbing = true;
+        if (objectBody.gameObject.CompareTag("Gnome"))
+        {
+            movement_behavior.is_grabbed = true;
+        }
 
         //create a grab point
         grabPoint = new GameObject().transform;
@@ -221,6 +228,10 @@ public class PhysicsHand : MonoBehaviour
         if(heldObject != null)
         {
             var objectBody = heldObject.GetComponent<Rigidbody>();
+            if (objectBody.gameObject.CompareTag("Gnome"))
+            {
+                movement_behavior.is_grabbed = false;
+            }
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;
             heldObject = null;
