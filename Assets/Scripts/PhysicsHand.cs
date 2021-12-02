@@ -32,6 +32,9 @@ public class PhysicsHand : MonoBehaviour
     private Transform grabPoint;
     private FixedJoint joint1, joint2;
 
+    //gnome grabs
+    public MovementBehavior movement_behavior;
+
 
 
     Quaternion Modulate360(Quaternion q)
@@ -157,6 +160,10 @@ public class PhysicsHand : MonoBehaviour
     private IEnumerator GrabObject(Collider collider, Rigidbody objectBody)
     {
         isGrabbing = true;
+        if (objectBody.gameObject.CompareTag("Gnome"))
+        {
+            movement_behavior.is_grabbed = true;
+        }
 
         //create a grab point
         grabPoint = new GameObject().transform;
@@ -221,6 +228,10 @@ public class PhysicsHand : MonoBehaviour
         if(heldObject != null)
         {
             var objectBody = heldObject.GetComponent<Rigidbody>();
+            if (objectBody.gameObject.CompareTag("Gnome"))
+            {
+                movement_behavior.is_grabbed = false;
+            }
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;
             heldObject = null;

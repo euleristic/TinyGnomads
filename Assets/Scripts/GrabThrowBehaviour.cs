@@ -23,8 +23,12 @@ public class GrabThrowBehaviour : MonoBehaviour
     private Vector3 grab_collider_half_extents;
     Quaternion grab_collider_rotation;
     private GameObject gnome_body;
+    private float object_body_mass;
 
     private bool game_started;
+
+    //grab gnome's grab
+    Collider grabbed_by_gnome_collider;
 
     //animation
     private Animator animator;
@@ -59,18 +63,19 @@ public class GrabThrowBehaviour : MonoBehaviour
         grab_collider_rotation = gnome_body.transform.rotation;
 
         //gnome_grab_point = movement_behavior.gnome_collider.transform.position + Vector3.up / 3f;
-        gnome_grab_point = movement_behavior.gnome_collider.transform.position + new Vector3(0, gnome_height * 1.1f, 0);
+        gnome_grab_point = movement_behavior.gnome_collider.transform.position + gnome_body.transform.rotation * new Vector3(0, gnome_height * 1.1f, 0);
 
-        foreach (Transform child in gnome_body.transform)
-        {
-            Rigidbody child_rb = child.GetComponent<Rigidbody>();
-            if (child_rb != null)
-            {
-                child.position = gnome_grab_point;
-                child_rb.velocity = Vector3.zero;
-                child.transform.rotation = gnome_body.transform.rotation;
-            }
-        }
+        //foreach (Transform child in gnome_body.transform)
+        //{
+        //    Rigidbody child_rb = child.GetComponent<Rigidbody>();
+        //    if (child_rb != null)
+        //    {
+        //        child_rb.MovePosition(gnome_grab_point);
+        //        child.position = gnome_grab_point;
+        //        child_rb.velocity = Vector3.zero;
+        //        child.transform.rotation = gnome_body.transform.rotation;
+        //    }
+        //}
 
     }
     public void Grab(InputAction.CallbackContext context)
@@ -137,6 +142,13 @@ public class GrabThrowBehaviour : MonoBehaviour
         objectBody.gameObject.transform.position = gnome_grab_point;
         //objectBody.MovePosition(gnome_grab_point);
         objectBody.useGravity = false;
+        object_body_mass = objectBody.mass;
+        objectBody.mass = 0.0f;
+        objectBody.isKinematic = true;
+
+        System.Type collider_type;
+        collider_type = objectBody.gameObject.GetComponent<Collider>().GetType();
+        grabbed_by_gnome_collider = (Collider)gnome_body.gameObject.AddComponent(collider_type);
 
 
 
@@ -185,6 +197,10 @@ public class GrabThrowBehaviour : MonoBehaviour
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             heldObject = null;
             objectBody.useGravity = true;
+            objectBody.mass = object_body_mass;
+            objectBody.isKinematic = false;
+
+            objectBody.gameObject.transform.position = grab_center;
         }
 
         isGrabbing = false;

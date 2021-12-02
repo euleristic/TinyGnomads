@@ -123,6 +123,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &60619231 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2070446476345599665, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7797701418769381147}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 973f63b19c442944285ce00da23d764b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &64175235
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40981,11 +40993,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 396061575685007454, guid: efef19a6046a72a43abd05177636eeb8,
+        type: 3}
+      propertyPath: movement_behavior
+      value: 
+      objectReference: {fileID: 60619231}
     - target: {fileID: 4429159551154083344, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: controller
       value: 
       objectReference: {fileID: 632016730}
+    - target: {fileID: 4429159551154083344, guid: efef19a6046a72a43abd05177636eeb8,
+        type: 3}
+      propertyPath: movement_behavior
+      value: 
+      objectReference: {fileID: 60619231}
     - target: {fileID: 7722134710055584163, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: m_Name
@@ -52810,6 +52832,11 @@ PrefabInstance:
     - target: {fileID: 7797701417409775488, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
       propertyPath: m_Name
+      value: Gnome
+      objectReference: {fileID: 0}
+    - target: {fileID: 7797701417409775488, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
+        type: 3}
+      propertyPath: m_TagString
       value: Gnome
       objectReference: {fileID: 0}
     - target: {fileID: 7797701417409775494, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,

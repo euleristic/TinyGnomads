@@ -20,13 +20,17 @@ public class MovementBehavior : MonoBehaviour
     //jumping
     [System.NonSerialized] bool grounded = true;
     [System.NonSerialized] bool readyToJump = true;
-    float jumpForce = 4.5f;
+    float jumpForce = 5.0f;
     float jumpCooldown = 0.1f;
     private bool has_input_jump;
 
     public BoxCollider gnome_collider;
     [System.NonSerialized] public float gnome_scale_factor;
     [System.NonSerialized] public float gnome_height, gnome_lenght, gnome_width;
+
+    //being grabbed
+    [System.NonSerialized] public bool is_grabbed;
+    private bool rotation_reset;
 
     //animation
     public Animator animator;
@@ -58,7 +62,10 @@ public class MovementBehavior : MonoBehaviour
             velocity = new Vector3(velocity.x, 0f, velocity.z).normalized * maxMoveSpeed + new Vector3(0f, velocity.y);
         }
         rb.velocity = velocity;
-        body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
+        if(!is_grabbed)
+        {
+            body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
+        }
 
 
         //decceleration
@@ -95,6 +102,23 @@ public class MovementBehavior : MonoBehaviour
 
         gnome_horizontal_velocity = Vector3.Dot(rb.velocity, body.transform.right / maxMoveSpeed);
         animator.SetFloat("SideVelocity", gnome_horizontal_velocity);
+
+        if(is_grabbed)
+        {
+            animator.SetBool("isGrabbed", true);
+            rotation_reset = false;
+            if (rb.constraints != RigidbodyConstraints.None)
+            {
+                rb.constraints = RigidbodyConstraints.None;
+            }
+        }
+        else if (!is_grabbed && !rotation_reset)
+        {
+            rb.rotation = Quaternion.Euler(0, rb.rotation.y, 0);
+            rb.constraints = RigidbodyConstraints.FreezeRotation;
+            rotation_reset = true;
+            animator.SetBool("isGrabbed", false);
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
