@@ -234,7 +234,8 @@ public class GrabThrowBehaviour : MonoBehaviour
                     {
                         objectBody.transform.position = gnome_grab_point;
                         hand.ReleaseObject();
-                        hand.GrabObject(grabbed_object_mesh_collider, objectBody);
+                        hand.heldObject = objectBody.gameObject;
+                        StartCoroutine(hand.GrabObject(grabbed_object_mesh_collider, objectBody));
                     }
                 }
             }

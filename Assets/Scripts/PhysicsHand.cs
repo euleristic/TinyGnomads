@@ -28,7 +28,7 @@ public class PhysicsHand : MonoBehaviour
     public LayerMask grabbableLayer;
 
     private bool isGrabbing;
-    private GameObject heldObject;
+    [System.NonSerialized] public GameObject heldObject;
     public Collider heldCollider;
     private Transform grabPoint;
     private FixedJoint joint1, joint2;
@@ -240,6 +240,8 @@ public class PhysicsHand : MonoBehaviour
             if (objectBody.gameObject.CompareTag("Gnome"))
             {
                 movement_behavior.is_grabbed = false;
+                movement_behavior.is_thrown = true;
+                movement_behavior.resetRotation();
             }
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;
