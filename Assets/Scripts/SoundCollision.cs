@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class SoundCollision : MonoBehaviour
 {
+    [Header("Audio Source 1 = Rigidbody Collsion")]
+    [Header("Audio Source 0 = Non Rigidbody Collsion")]
+
+
+    [Tooltip("Audio Source 0 = Non Rigidbody Collsion & Audio Source 1 = Rigidbody Collsion")]
     public AudioSource[] audioSource;
     private bool done;
 
@@ -22,7 +27,7 @@ public class SoundCollision : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
 
-        if(collision.rigidbody == null && done == true)
+        if(collision.rigidbody == null && done == true && audioSource[0] != null)
         {
             // Low Sound
 
@@ -33,7 +38,7 @@ public class SoundCollision : MonoBehaviour
             audioSource[0].Play();
         }
 
-        if(collision.rigidbody != null && collision.relativeVelocity.sqrMagnitude > 0.01f && done == true)
+        if(collision.rigidbody != null && collision.relativeVelocity.sqrMagnitude > 0.01f && done == true && audioSource[1] != null)
         {
             // High Sound
 
