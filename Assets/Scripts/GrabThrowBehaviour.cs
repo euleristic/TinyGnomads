@@ -28,7 +28,11 @@ public class GrabThrowBehaviour : MonoBehaviour
     private bool game_started;
 
     //grab gnome's grab
-    Collider grabbed_by_gnome_collider;
+    [SerializeField] MeshCollider new_object_mesh_collider;
+    private MeshCollider grabbed_object_mesh_collider;
+
+    [SerializeField] PhysicsHand left_hand, right_hand;
+    PhysicsHand[] hands;
 
     //animation
     private Animator animator;
@@ -39,6 +43,9 @@ public class GrabThrowBehaviour : MonoBehaviour
         grab_center = gnome_body.transform.position + gnome_body.transform.forward * gnome_lenght + new Vector3(0.0f, gnome_height / 6, 0.0f);
         grab_collider_half_extents = new Vector3(gnome_width, gnome_height / 1.5f, gnome_lenght / 2);
         grab_collider_rotation = gnome_body.transform.rotation;
+
+        grabbed_object_mesh_collider = null;
+        hands = new PhysicsHand[2] { left_hand, right_hand };
 
         game_started = true;
     }
@@ -128,7 +135,8 @@ public class GrabThrowBehaviour : MonoBehaviour
         ////objectBody.velocity = Vector3.zero;
         ////objectBody.angularVelocity = Vector3.zero;
 
-        objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        //objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
+        objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
         //objectBody.gameObject.transform.parent = gameObject.transform;
         //held_grab_transform.position = gnome_grab_point;
@@ -137,18 +145,30 @@ public class GrabThrowBehaviour : MonoBehaviour
 
         //gnome_grab_point = movement_behavior.gnome_collider.transform.position + Vector3.up/3f;
         gnome_grab_point = movement_behavior.gnome_collider.transform.position + new Vector3(0, gnome_height * 1.1f, 0);
-        objectBody.gameObject.transform.parent = movement_behavior.body.transform;
+        objectBody.transform.parent = gnome_body.transform;
 
-        objectBody.gameObject.transform.position = gnome_grab_point;
+        objectBody.transform.position = gnome_grab_point;
+        objectBody.transform.localRotation = Quaternion.identity;
         //objectBody.MovePosition(gnome_grab_point);
         objectBody.useGravity = false;
         object_body_mass = objectBody.mass;
         objectBody.mass = 0.0f;
         objectBody.isKinematic = true;
 
+        //collider stuff
         System.Type collider_type;
         collider_type = objectBody.gameObject.GetComponent<Collider>().GetType();
-        grabbed_by_gnome_collider = (Collider)gnome_body.gameObject.AddComponent(collider_type);
+        new_object_mesh_collider.transform.position = gnome_grab_point;
+        if (collider_type == new_object_mesh_collider.GetType())
+        {
+            new_object_mesh_collider.transform.localScale = objectBody.transform.lossyScale;
+
+
+            grabbed_object_mesh_collider = objectBody.gameObject.GetComponent<MeshCollider>();
+            grabbed_object_mesh_collider.enabled = false;
+            new_object_mesh_collider.sharedMesh = grabbed_object_mesh_collider.sharedMesh;
+            new_object_mesh_collider.enabled = true;
+        }
 
 
 
@@ -201,6 +221,24 @@ public class GrabThrowBehaviour : MonoBehaviour
             objectBody.isKinematic = false;
 
             objectBody.gameObject.transform.position = grab_center;
+
+            //collider stuff
+            new_object_mesh_collider.enabled = false;
+            grabbed_object_mesh_collider.enabled = true;
+
+            if(movement_behavior.is_grabbed)
+            {
+                foreach(PhysicsHand hand in hands)
+                {
+                    if(hand.heldCollider == new_object_mesh_collider)
+                    {
+                        objectBody.transform.position = gnome_grab_point;
+                        hand.ReleaseObject();
+                        hand.heldObject = objectBody.gameObject;
+                        StartCoroutine(hand.GrabObject(grabbed_object_mesh_collider, objectBody));
+                    }
+                }
+            }
         }
 
         isGrabbing = false;

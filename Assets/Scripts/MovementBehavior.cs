@@ -18,7 +18,7 @@ public class MovementBehavior : MonoBehaviour
     private bool has_input_move;
 
     //jumping
-    [System.NonSerialized] bool grounded = true;
+    //[System.NonSerialized] bool grounded = true;
     [System.NonSerialized] bool readyToJump = true;
     float jumpForce = 5.0f;
     float jumpCooldown = 0.1f;
@@ -31,6 +31,8 @@ public class MovementBehavior : MonoBehaviour
     //being grabbed
     [System.NonSerialized] public bool is_grabbed;
     private bool rotation_reset;
+
+    [System.NonSerialized] public bool is_thrown = false;
 
     //animation
     public Animator animator;
@@ -53,6 +55,12 @@ public class MovementBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(is_thrown)
+        {
+            is_thrown = !isGrounded();
+            return;
+        }
+
         Vector3 velocity = rb.velocity;
         velocity += Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f) * new Vector3(movementInputVector.x, 0.0f, movementInputVector.y) * acceleration * Time.deltaTime;
 
@@ -69,7 +77,7 @@ public class MovementBehavior : MonoBehaviour
 
 
         //decceleration
-        if(isGrounded() && has_input_move == false && has_input_jump == false )
+        if(has_input_move == false && has_input_jump == false && isGrounded())
         {
             rb.velocity = rb.velocity * decceleration * Time.deltaTime;
         }
@@ -114,10 +122,7 @@ public class MovementBehavior : MonoBehaviour
         }
         else if (!is_grabbed && !rotation_reset)
         {
-            rb.rotation = Quaternion.Euler(0, rb.rotation.y, 0);
-            rb.constraints = RigidbodyConstraints.FreezeRotation;
-            rotation_reset = true;
-            animator.SetBool("isGrabbed", false);
+            resetRotation();
         }
     }
 
@@ -191,6 +196,14 @@ public class MovementBehavior : MonoBehaviour
             return false;
         }
 
+    }
+
+    public void resetRotation()
+    {
+        rb.rotation = Quaternion.Euler(0, rb.rotation.y, 0);
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        rotation_reset = true;
+        animator.SetBool("isGrabbed", false);
     }
 
     private void OnDrawGizmosSelected()

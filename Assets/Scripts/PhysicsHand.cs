@@ -28,12 +28,15 @@ public class PhysicsHand : MonoBehaviour
     public LayerMask grabbableLayer;
 
     private bool isGrabbing;
-    private GameObject heldObject;
+    [System.NonSerialized] public GameObject heldObject;
+    public Collider heldCollider;
     private Transform grabPoint;
     private FixedJoint joint1, joint2;
 
     //gnome grabs
     public MovementBehavior movement_behavior;
+
+
 
 
 
@@ -63,7 +66,7 @@ public class PhysicsHand : MonoBehaviour
         controller.selectAction.action.started += Grab;
         controller.selectAction.action.canceled += Release;
 
-
+        heldCollider = null;
 
 
         //Teleport hands
@@ -157,8 +160,9 @@ public class PhysicsHand : MonoBehaviour
         StartCoroutine(GrabObject(grabbableColliders[0], objectBody));
     }
 
-    private IEnumerator GrabObject(Collider collider, Rigidbody objectBody)
+    public IEnumerator GrabObject(Collider collider, Rigidbody objectBody)
     {
+        heldCollider = collider;
         isGrabbing = true;
         if (objectBody.gameObject.CompareTag("Gnome"))
         {
@@ -216,6 +220,11 @@ public class PhysicsHand : MonoBehaviour
 
     private void Release(InputAction.CallbackContext context)
     {
+        ReleaseObject();
+    }
+
+    public void ReleaseObject()
+    {
         if (joint1 != null)
             Destroy(joint1);
 
@@ -225,12 +234,14 @@ public class PhysicsHand : MonoBehaviour
         if (grabPoint != null)
             Destroy(grabPoint.gameObject);
 
-        if(heldObject != null)
+        if (heldObject != null)
         {
             var objectBody = heldObject.GetComponent<Rigidbody>();
             if (objectBody.gameObject.CompareTag("Gnome"))
             {
                 movement_behavior.is_grabbed = false;
+                movement_behavior.is_thrown = true;
+                movement_behavior.resetRotation();
             }
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;
