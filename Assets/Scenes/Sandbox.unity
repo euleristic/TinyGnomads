@@ -7029,7 +7029,7 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 876068313}
     rigTarget: {fileID: 59242340}
-    trackingPositionOffset: {x: 0, y: 1, z: -0.15}
+    trackingPositionOffset: {x: 0, y: -0.3, z: -0.18}
     trackingRotationOffset: {x: 180, y: 180, z: 180}
   leftHand:
     vrTarget: {fileID: 1650431752}
@@ -42641,7 +42641,7 @@ PrefabInstance:
     - target: {fileID: 7722134710055584173, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: m_RequestedTrackingOriginMode
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7722134710372992798, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
@@ -43574,6 +43574,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -9006652649445441987, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9006652649445441987, guid: 3e10a26f8160f3e47a383bbb86095bf6,
+        type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
@@ -43605,7 +43610,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.274
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
@@ -43689,6 +43694,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4971694372878647677, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4971694372878647677, guid: 3e10a26f8160f3e47a383bbb86095bf6,
+        type: 3}
       propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
@@ -43700,7 +43710,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1445750608668337570, guid: 3e10a26f8160f3e47a383bbb86095bf6,
         type: 3}
