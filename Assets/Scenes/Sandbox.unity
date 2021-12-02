@@ -7520,6 +7520,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &589862346 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4429159551154083344, guid: efef19a6046a72a43abd05177636eeb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1805168588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6517ade1fffe2e144af36d202e6ca16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &597449230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8468,6 +8480,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &721407887 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8481810204655726790, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7797701418769381147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &728262151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41296,6 +41314,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1881228099}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1891560727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1891560728}
+  - component: {fileID: 1891560729}
+  m_Layer: 9
+  m_Name: GrabbedObjectCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1891560728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891560727}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 721407887}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1891560729
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891560727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!4 &1938292409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 962625141bd535f41a4ab9a3293038b4,
@@ -46966,6 +47029,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7797701418769381147}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2066315399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 396061575685007454, guid: efef19a6046a72a43abd05177636eeb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1805168588}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6517ade1fffe2e144af36d202e6ca16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2071683295
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52829,6 +52904,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1807084613, guid: 5c75b2f15ab7be14fa3cea1d11fe300e, type: 3}
+      propertyPath: left_hand
+      value: 
+      objectReference: {fileID: 589862346}
+    - target: {fileID: 1807084613, guid: 5c75b2f15ab7be14fa3cea1d11fe300e, type: 3}
+      propertyPath: right_hand
+      value: 
+      objectReference: {fileID: 2066315399}
+    - target: {fileID: 1807084613, guid: 5c75b2f15ab7be14fa3cea1d11fe300e, type: 3}
+      propertyPath: new_object_mesh_collider
+      value: 
+      objectReference: {fileID: 1891560729}
+    - target: {fileID: 1807084613, guid: 5c75b2f15ab7be14fa3cea1d11fe300e, type: 3}
+      propertyPath: grabbed_object_mesh_collider
+      value: 
+      objectReference: {fileID: 1891560729}
     - target: {fileID: 7797701417409775488, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
       propertyPath: m_Name

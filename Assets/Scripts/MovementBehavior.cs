@@ -18,7 +18,7 @@ public class MovementBehavior : MonoBehaviour
     private bool has_input_move;
 
     //jumping
-    [System.NonSerialized] bool grounded = true;
+    //[System.NonSerialized] bool grounded = true;
     [System.NonSerialized] bool readyToJump = true;
     float jumpForce = 5.0f;
     float jumpCooldown = 0.1f;
