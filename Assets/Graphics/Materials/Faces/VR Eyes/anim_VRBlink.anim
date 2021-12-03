@@ -21,21 +21,21 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 2100000, guid: 80783591e2daf874ea4858c3308faefa, type: 2}
-    - time: 0.29166666
+    - time: 0.2
       value: {fileID: 2100000, guid: 6eef0296f2507a54ca85479046463684, type: 2}
-    - time: 0.30833334
+    - time: 0.215
       value: {fileID: 2100000, guid: 610c8619317c5d741b0edf8d38e80bff, type: 2}
-    - time: 0.41666666
+    - time: 0.41
       value: {fileID: 2100000, guid: 6eef0296f2507a54ca85479046463684, type: 2}
-    - time: 0.43333334
+    - time: 0.425
       value: {fileID: 2100000, guid: 80783591e2daf874ea4858c3308faefa, type: 2}
-    - time: 1.675
+    - time: 1
       value: {fileID: 2100000, guid: 80783591e2daf874ea4858c3308faefa, type: 2}
     attribute: m_Materials.Array.data[0]
-    path: eyesplane
+    path: 
     classID: 137
     script: {fileID: 0}
-  m_SampleRate: 120
+  m_SampleRate: 200
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -43,7 +43,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 273390670
+      path: 0
       attribute: 0
       script: {fileID: 0}
       typeID: 137
@@ -61,7 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.6833333
+    m_StopTime: 1.005
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
