@@ -148,20 +148,20 @@ AudioSource:
     - serializedVersion: 3
       time: 0.07307434
       value: 1.0056686
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.2094429
+      outSlope: -1.2094429
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33136827
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -2
-      outSlope: -2
+      inSlope: -0.6560085
+      outSlope: -0.6560085
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.22150998
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
