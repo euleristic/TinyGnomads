@@ -31,7 +31,7 @@ public class SoundCollision : MonoBehaviour
         {
             // Low Sound
 
-            float rand = Random.Range(0.8f, 1.2f);
+            float rand = Random.Range(0.9f, 1.1f);
 
             audioSource[0].pitch = rand;
 
@@ -42,7 +42,7 @@ public class SoundCollision : MonoBehaviour
         {
             // High Sound
 
-            float rand = Random.Range(0.8f, 1.2f);
+            float rand = Random.Range(0.9f, 1.1f);
 
             audioSource[1].pitch = rand;
             audioSource[1].Play();
