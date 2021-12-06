@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource:
   - {fileID: 8773926719975489896}
+  - {fileID: 0}
 --- !u!82 &8773926719975489896
 AudioSource:
   m_ObjectHideFlags: 0
