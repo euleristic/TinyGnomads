@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PourControl : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] Transform top, bottom;
+    [SerializeField] ParticleSystem system;
+    bool active; //I'm scared that SetActive() might be expensive, so just to be safe...
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!active && top.position.y < bottom.position.y)
+        {
+            active = true;
+            system.gameObject.SetActive(active);
+        }
+        else if (active && bottom.position.y < top.position.y)
+        {
+            active = false;
+            system.gameObject.SetActive(active);
+        }
     }
 }
