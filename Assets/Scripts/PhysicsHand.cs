@@ -123,7 +123,7 @@ public class PhysicsHand : MonoBehaviour
 
 
         //Rotation
-        body.angularVelocity = angularVelocity;
+            body.angularVelocity = angularVelocity;
 
         //var forwardWithOffset = Quaternion.Euler(rotationOffset) * _followTarget.up;
         //var crossProduct = Vector3.Cross(forwardWithOffset, _body.rotation * Vector3.up);

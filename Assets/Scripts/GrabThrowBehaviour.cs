@@ -34,6 +34,9 @@ public class GrabThrowBehaviour : MonoBehaviour
     [SerializeField] PhysicsHand left_hand, right_hand;
     PhysicsHand[] hands;
 
+    //throw
+    float throw_force = 1.5f;
+
     //animation
     private Animator animator;
 
@@ -65,7 +68,7 @@ public class GrabThrowBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        grab_center = gnome_body.transform.position + gnome_body.transform.forward * gnome_lenght + new Vector3(0.0f, gnome_height / 6, 0.0f);
+        grab_center = gnome_body.transform.position + gnome_body.transform.forward * gnome_lenght + new Vector3(0.0f, gnome_height / 3, 0.0f);
         grab_collider_half_extents = new Vector3(gnome_width, gnome_height / 1.5f, gnome_lenght / 2);
         grab_collider_rotation = gnome_body.transform.rotation;
 
@@ -82,12 +85,12 @@ public class GrabThrowBehaviour : MonoBehaviour
                 return;
             }
 
-            Release();
-
             if (heldObject != null)
             {
                 var objectBody = heldObject.GetComponent<Rigidbody>();
+                Release();
                 objectBody.gameObject.transform.position = gnome_grab_point;
+                objectBody.velocity += (gnome_body.transform.up * 0.8f + gnome_body.transform.forward) * throw_force;
             }
         }
     }
@@ -106,9 +109,18 @@ public class GrabThrowBehaviour : MonoBehaviour
 
             if (grabbableColliders.Length < 1) return;
 
-            print("miiiiiiiiiiiiiiiisstaaaa");
+            //print("miiiiiiiiiiiiiiiisstaaaa");
 
             var objectToGrab = grabbableColliders[0].transform.gameObject;
+
+            foreach(Collider grabbable_collider in grabbableColliders)
+            {
+                if(Vector3.Distance(grabbable_collider.transform.position, grab_center) < Vector3.Distance(objectToGrab.transform.position, grab_center))
+                {
+                    objectToGrab = grabbable_collider.transform.gameObject;
+                }
+            }
+
             var objectBody = objectToGrab.GetComponent<Rigidbody>();
 
             if (objectBody != null)
