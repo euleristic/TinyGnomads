@@ -36,6 +36,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Throw",
+                    "type": "Button",
+                    "id": "df0e957a-c714-4279-8393-67d460b218c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -228,17 +236,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4b4362c8-b4a3-4cb3-bd93-65b57f7c25ee",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Grab",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c9a80a8c-e5d4-4157-835d-c81a140de451",
                     "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
@@ -251,11 +248,33 @@
                 {
                     "name": "",
                     "id": "dc22e42d-2591-43d5-97b3-85a37f7c8d9e",
-                    "path": "<Keyboard>/z",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Grab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "940b2e83-f282-42f0-bc31-437aa5947882",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cd32e627-3e9a-41aa-9528-9655144f3dba",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
