@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5674038983060169662}
   - component: {fileID: 5674038983060169663}
   - component: {fileID: 5007451334718687720}
+  - component: {fileID: 8537826532239514401}
   m_Layer: 7
   m_Name: Ketchup Packet
   m_TagString: Untagged
@@ -129,3 +130,18 @@ MonoBehaviour:
   audioSource:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &8537826532239514401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5674038983060169660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5101353a139698545bfbdb37071ffd31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: ketchup
+  splashParticle: {fileID: 8316604062332447469, guid: ff244980128fca4418bec185914247ab,
+    type: 3}
