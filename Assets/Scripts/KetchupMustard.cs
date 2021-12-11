@@ -23,6 +23,7 @@ public class KetchupMustard : MonoBehaviour
                 other.GetComponent<HeadManager>().splats[1].Play();
                 break;
         }
+            DateScore.ChangeScore(-0.05f);
             Destroy(splash, 2);
             Destroy(gameObject);
         }

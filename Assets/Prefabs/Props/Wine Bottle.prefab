@@ -493,11 +493,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
         type: 3}
-      propertyPath: TriggerModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
       propertyPath: ShapeModule.m_Rotation.y
       value: 180
       objectReference: {fileID: 0}
@@ -508,44 +503,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
         type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 40
       objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: TriggerModule.primitives.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: InitialModule.startSpeed.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2402277990524574091, guid: ce88dd40e0be0874b8c9c489609d61bc,
-        type: 3}
-      propertyPath: TriggerModule.primitives.Array.data[0]
-      value: 
-      objectReference: {fileID: 1189196882468500877}
     - target: {fileID: 2402277990524574196, guid: ce88dd40e0be0874b8c9c489609d61bc,
         type: 3}
       propertyPath: m_RootOrder

@@ -35,7 +35,9 @@ public class GrabThrowBehaviour : MonoBehaviour
     PhysicsHand[] hands;
 
     //throw
-    float throw_force = 1.5f;
+    [SerializeField]float throw_force = 0.5f;
+    [SerializeField] bool charging = false;
+    [SerializeField ]private ParticleSystem chargeParticles;
 
     //animation
     private Animator animator;
@@ -73,11 +75,25 @@ public class GrabThrowBehaviour : MonoBehaviour
         grab_collider_rotation = gnome_body.transform.rotation;
 
         gnome_grab_point = movement_behavior.gnome_collider.transform.position + gnome_body.transform.rotation * new Vector3(0, gnome_height * 1.1f, 0);
+
+        if (charging == true)
+        {
+            if(throw_force <= 2)
+            {
+            throw_force = throw_force + 0.005f;
+            }
+
+            if(throw_force >= 2)
+            {
+                chargeParticles.Stop();
+            }
+        }
     }
+
 
     public void Throw(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.canceled)
         {
             if (movement_behavior.is_grabbed)
             {
@@ -91,7 +107,15 @@ public class GrabThrowBehaviour : MonoBehaviour
                 Release();
                 objectBody.gameObject.transform.position = gnome_grab_point;
                 objectBody.velocity += (gnome_body.transform.up * 0.8f + gnome_body.transform.forward) * throw_force;
+                charging = false;
+                throw_force = 0.5f;
+                chargeParticles.Stop();
             }
+        }
+        if (context.performed && heldObject != null)
+        {
+            charging = true;
+            chargeParticles.Play();
         }
     }
 

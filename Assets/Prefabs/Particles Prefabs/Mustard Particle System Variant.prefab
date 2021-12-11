@@ -22,6 +22,16 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.8113208
       objectReference: {fileID: 0}
+    - target: {fileID: 97730775468042360, guid: 925557e7e9cda66418d1eda933f18fbd,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.27428213
+      objectReference: {fileID: 0}
+    - target: {fileID: 97730775468042360, guid: 925557e7e9cda66418d1eda933f18fbd,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6431373
+      objectReference: {fileID: 0}
     - target: {fileID: 3077091777603639879, guid: 925557e7e9cda66418d1eda933f18fbd,
         type: 3}
       propertyPath: ShapeModule.radius.value
@@ -42,10 +52,20 @@ PrefabInstance:
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.8392157
       objectReference: {fileID: 0}
+    - target: {fileID: 3077091777603639879, guid: 925557e7e9cda66418d1eda933f18fbd,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.41556415
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077091777603639879, guid: 925557e7e9cda66418d1eda933f18fbd,
+        type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 0.6509804
+      objectReference: {fileID: 0}
     - target: {fileID: 5666576278907183427, guid: 925557e7e9cda66418d1eda933f18fbd,
         type: 3}
       propertyPath: m_Name
-      value: Mustard Particle System
+      value: Mustard Particle System Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5817431875446905849, guid: 925557e7e9cda66418d1eda933f18fbd,
         type: 3}
