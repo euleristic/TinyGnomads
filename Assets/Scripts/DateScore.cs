@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class DateScore : MonoBehaviour
 {
-    [SerializeField] static Slider gnomeCamSlider;
+    static Slider gnomeCamSlider;
     public static float value;
 
-    [SerializeField] static bool scoreUnlocked;
+    static bool scoreUnlocked;
     
     void Start()
     {
+        gnomeCamSlider = GetComponentInChildren<Slider>();
         value = .5f;
         gnomeCamSlider.value = value;
         scoreUnlocked = true;
