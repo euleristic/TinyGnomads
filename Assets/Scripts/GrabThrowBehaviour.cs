@@ -53,6 +53,7 @@ public class GrabThrowBehaviour : MonoBehaviour
         hands = new PhysicsHand[2] { left_hand, right_hand };
 
         game_started = true;
+
     }
     private void Awake()
     {
@@ -81,11 +82,14 @@ public class GrabThrowBehaviour : MonoBehaviour
             if(throw_force <= 2)
             {
             throw_force = throw_force + 0.005f;
+                var chargePS = chargeParticles.emission;
+                chargePS.rateOverTime = throw_force * 2.9f;
             }
 
             if(throw_force >= 2)
             {
-                chargeParticles.Stop();
+               var chargePS = chargeParticles.emission;
+                chargePS.rateOverTime = 10f;
             }
         }
     }
@@ -110,6 +114,8 @@ public class GrabThrowBehaviour : MonoBehaviour
                 charging = false;
                 throw_force = 0.5f;
                 chargeParticles.Stop();
+                var chargePS = chargeParticles.emission;
+                chargePS.rateOverTime = 3f;
             }
         }
         if (context.performed && heldObject != null)
