@@ -17,12 +17,12 @@ public class Breakable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.sqrMagnitude > breakVelocitySqr)
+
+        if (collision.relativeVelocity.sqrMagnitude > breakVelocitySqr && collision.gameObject.layer != LayerMask.NameToLayer("Hand"))
         {
             DateScore.ChangeScore(dateReaction);
             Destroy(Instantiate(breakObject, transform.position, Quaternion.identity), 2f);
             Destroy(gameObject);
-
         }
     }
 }

@@ -34,6 +34,11 @@ public class MovementBehavior : MonoBehaviour
     //being grabbed
     [System.NonSerialized] public bool is_grabbed;
     private bool rotation_reset;
+    [SerializeField] int breakFreeCount;
+    [SerializeField] float breakFreeWindow;
+    List<float> breakAttempts = new List<float>();
+    [SerializeField] PhysicsHand left_hand, right_hand;
+    PhysicsHand[] hands;
 
     [System.NonSerialized] public bool is_thrown = false;
 
@@ -45,6 +50,8 @@ public class MovementBehavior : MonoBehaviour
     {
         maxMoveSpeedSqr = maxMoveSpeed * maxMoveSpeed;
         rb = GetComponent<Rigidbody>();
+
+        hands = new PhysicsHand[2] { left_hand, right_hand };
     }
 
     private void Awake()
@@ -149,6 +156,28 @@ public class MovementBehavior : MonoBehaviour
         //clicked jump
         if (context.performed)
         {
+            if (is_grabbed)
+            {
+                breakAttempts.Add(Time.time);
+                int timesToRemove = 0;
+                foreach (float time in breakAttempts)
+                {
+                    if (time < Time.time - breakFreeWindow)
+                        timesToRemove++;
+                    else
+                        break;
+                }
+                breakAttempts.RemoveRange(0, timesToRemove);
+                if (breakAttempts.Count >= breakFreeCount)
+                    foreach (PhysicsHand hand in hands)
+                    {
+                        if (hand.heldObject == gameObject)
+                        {
+                            hand.ReleaseObject();
+                        }
+                    }
+
+            }
             if (is_grounded && readyToJump)
             {
                 readyToJump = false;
