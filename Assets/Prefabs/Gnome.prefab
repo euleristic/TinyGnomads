@@ -15742,7 +15742,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 7
+      scalar: 9
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -39437,6 +39437,10 @@ MonoBehaviour:
   decceleration: 1
   body: {fileID: 8133373711322490186}
   gnome_collider: {fileID: 3648367469040620359}
+  breakFreeCount: 0
+  breakFreeWindow: 0
+  left_hand: {fileID: 0}
+  right_hand: {fileID: 0}
   animator: {fileID: 1605092793836533922}
 --- !u!114 &1807084613
 MonoBehaviour:
