@@ -5,7 +5,5 @@ using UnityEngine;
 public class HeadManager : MonoBehaviour
 {
     public ParticleSystem[] splats;
-    
-
 
 }

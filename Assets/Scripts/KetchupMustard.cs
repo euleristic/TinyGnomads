@@ -12,6 +12,7 @@ public class KetchupMustard : MonoBehaviour
         if(other.GetComponent<HeadManager>() != null)
         {
             GameObject splash = Instantiate(splashParticle, transform.position, transform.rotation);
+            Destroy(splash, 2);
 
            switch (type)
         {
@@ -24,7 +25,6 @@ public class KetchupMustard : MonoBehaviour
                 break;
         }
             DateScore.ChangeScore(-0.05f);
-            Destroy(splash, 2);
             Destroy(gameObject);
         }
     }

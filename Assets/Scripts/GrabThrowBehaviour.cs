@@ -36,8 +36,11 @@ public class GrabThrowBehaviour : MonoBehaviour
 
     //throw
     [SerializeField]float throw_force = 0.5f;
+    [SerializeField]float max_throw_force = 2f;
     [SerializeField] bool charging = false;
-    [SerializeField ]private ParticleSystem chargeParticles;
+    [SerializeField]private ParticleSystem chargeParticles;
+    float chargePerSecond;
+    float timeToCharge = 10;
 
     //animation
     private Animator animator;
@@ -53,6 +56,8 @@ public class GrabThrowBehaviour : MonoBehaviour
         hands = new PhysicsHand[2] { left_hand, right_hand };
 
         game_started = true;
+
+        chargePerSecond = (max_throw_force-throw_force) / timeToCharge;
     }
     private void Awake()
     {
@@ -75,17 +80,23 @@ public class GrabThrowBehaviour : MonoBehaviour
         grab_collider_rotation = gnome_body.transform.rotation;
 
         gnome_grab_point = movement_behavior.gnome_collider.transform.position + gnome_body.transform.rotation * new Vector3(0, gnome_height * 1.1f, 0);
+    }
 
+    private void FixedUpdate()
+    {
         if (charging == true)
         {
-            if(throw_force <= 2)
+            if (throw_force <= max_throw_force)
             {
-            throw_force = throw_force + 0.005f;
+                throw_force += chargePerSecond * Time.deltaTime;
+                var chargePS = chargeParticles.emission;
+                chargePS.rateOverTime = throw_force * 2.9f;
             }
 
-            if(throw_force >= 2)
+            if (throw_force >= max_throw_force)
             {
-                chargeParticles.Stop();
+                var chargePS = chargeParticles.emission;
+                chargePS.rateOverTime = 10f;
             }
         }
     }
@@ -104,12 +115,12 @@ public class GrabThrowBehaviour : MonoBehaviour
             if (heldObject != null)
             {
                 var objectBody = heldObject.GetComponent<Rigidbody>();
+                var temp_throw_force = throw_force;
                 Release();
+                throw_force = temp_throw_force;
                 objectBody.gameObject.transform.position = gnome_grab_point;
                 objectBody.velocity += (gnome_body.transform.up * 0.8f + gnome_body.transform.forward) * throw_force;
-                charging = false;
                 throw_force = 0.5f;
-                chargeParticles.Stop();
             }
         }
         if (context.performed && heldObject != null)
@@ -117,6 +128,15 @@ public class GrabThrowBehaviour : MonoBehaviour
             charging = true;
             chargeParticles.Play();
         }
+    }
+
+    private void resetCharging()
+    {
+        charging = false;
+        throw_force = 0.5f;
+        chargeParticles.Stop();
+        var chargePS = chargeParticles.emission;
+        chargePS.rateOverTime = 3f;
     }
 
     public void Grab(InputAction.CallbackContext context)
@@ -197,6 +217,8 @@ public class GrabThrowBehaviour : MonoBehaviour
     {
         if (heldObject != null)
         {
+            resetCharging();
+
             var objectBody = heldObject.GetComponent<Rigidbody>();
             objectBody.gameObject.transform.parent = null;
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
