@@ -36,7 +36,8 @@ public class MovementBehavior : MonoBehaviour
     private bool rotation_reset;
     [SerializeField] int breakFreeCount;
     [SerializeField] float breakFreeWindow;
-    List<float> breakAttempts = new List<float>();
+    //List<float> breakAttempts = new List<float>();
+    int breakAttempts = 0;
     [SerializeField] PhysicsHand left_hand, right_hand;
     PhysicsHand[] hands;
 
@@ -45,6 +46,9 @@ public class MovementBehavior : MonoBehaviour
     //animation
     public Animator animator;
     private float gnome_forward_velocity, gnome_horizontal_velocity;
+
+    //particles
+    [SerializeField] ParticleSystem ps_struggle, ps_escape;
 
     void Start()
     {
@@ -93,9 +97,23 @@ public class MovementBehavior : MonoBehaviour
             body.transform.rotation = Quaternion.Euler(0f, look_at.rotation.eulerAngles.y, 0.0f);
         }
 
+        //animator stuff
+        gnome_forward_velocity = Vector3.Dot(rb.velocity, body.transform.forward / maxMoveSpeed);
+        animator.SetFloat("Velocity", gnome_forward_velocity);
+
+        gnome_horizontal_velocity = Vector3.Dot(rb.velocity, body.transform.right / maxMoveSpeed);
+        animator.SetFloat("SideVelocity", gnome_horizontal_velocity);
+        if (gnome_forward_velocity < 0.001 && gnome_forward_velocity > -0.001f)
+        {
+            animator.SetFloat("Velocity", 0);
+        }
+        if (gnome_horizontal_velocity < 0.001 && gnome_horizontal_velocity > -0.001f)
+        {
+            animator.SetFloat("SideVelocity", 0);
+        }
 
         //decceleration
-        if(has_input_move == false && has_input_jump == false && is_grounded)
+        if (has_input_move == false && has_input_jump == false && is_grounded)
         {
             rb.velocity = rb.velocity * decceleration * Time.deltaTime;
         }
@@ -122,12 +140,6 @@ public class MovementBehavior : MonoBehaviour
         //    look_at.rotation = Quaternion.Euler(look_at.rotation.x, look_at.rotation.y, 0.0f);
         //}
 
-        //animator stuff
-        gnome_forward_velocity = Vector3.Dot(rb.velocity, body.transform.forward / maxMoveSpeed);
-        animator.SetFloat("Velocity", gnome_forward_velocity);
-
-        gnome_horizontal_velocity = Vector3.Dot(rb.velocity, body.transform.right / maxMoveSpeed);
-        animator.SetFloat("SideVelocity", gnome_horizontal_velocity);
 
         if(is_grabbed)
         {
@@ -158,27 +170,30 @@ public class MovementBehavior : MonoBehaviour
         {
             if (is_grabbed)
             {
-                breakAttempts.Add(Time.time);
-                int timesToRemove = 0;
-                foreach (float time in breakAttempts)
-                {
-                    if (time < Time.time - breakFreeWindow)
-                        timesToRemove++;
-                    else
-                        break;
-                }
-                breakAttempts.RemoveRange(0, timesToRemove);
-                if (breakAttempts.Count >= breakFreeCount)
+                breakAttempts++;
+                ps_struggle.Play();
+                //breakAttempts.Add(Time.time);
+                //int timesToRemove = 0;
+                //foreach (float time in breakAttempts)
+                //{
+                //    if (time < Time.time - breakFreeWindow)
+                //        timesToRemove++;
+                //    else
+                //        break;
+                //}
+                //breakAttempts.RemoveRange(0, timesToRemove);
+                if (breakAttempts >= breakFreeCount)
                     foreach (PhysicsHand hand in hands)
                     {
                         if (hand.heldObject == gameObject)
                         {
                             hand.ReleaseObject();
+                            ps_escape.Play();
+                            breakAttempts = 0;
                         }
                     }
-
             }
-            if (is_grounded && readyToJump)
+            else if (is_grounded && readyToJump)
             {
                 readyToJump = false;
 
