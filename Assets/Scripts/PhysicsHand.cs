@@ -37,8 +37,10 @@ public class PhysicsHand : MonoBehaviour
     public MovementBehavior movement_behavior;
 
 
-
-
+    //animation
+    float grabbing_float;
+    [SerializeField] InputActionReference trigger_input_reference;
+    Animator hand_animator;
 
     Quaternion Modulate360(Quaternion q)
     {
@@ -72,11 +74,15 @@ public class PhysicsHand : MonoBehaviour
         //Teleport hands
         body.position = followTarget.position;
         body.rotation = followTarget.rotation;
+
+        hand_animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         ReadFollow();
+        grabbing_float = trigger_input_reference.action.ReadValue<float>();
+        hand_animator.SetFloat("Trigger", grabbing_float);
     }
 
     void FixedUpdate()
@@ -107,12 +113,17 @@ public class PhysicsHand : MonoBehaviour
         var rotationWithOffset = followTarget.rotation * Quaternion.Euler(rotationOffset);
         var q = rotationWithOffset * Quaternion.Inverse(body.rotation);
         q.ToAngleAxis(out float angle, out Vector3 axis);
+        float non_changing_angle = angle;
 
-        if (angle > 180f)
+        if (non_changing_angle > 180f)
         {
-            angle -= 360f;
+            non_changing_angle -= 360f;
+            if(Mathf.Abs(non_changing_angle) <1.0f)
+            {
+                non_changing_angle = 0;
+            }
         }
-        angularVelocity = angle * axis * Mathf.Deg2Rad * rotateSpeed;
+        angularVelocity = non_changing_angle * axis * Mathf.Deg2Rad * rotateSpeed;
     }
 
     private void PhysicsMove()
@@ -123,7 +134,9 @@ public class PhysicsHand : MonoBehaviour
 
 
         //Rotation
-            body.angularVelocity = angularVelocity;
+
+        body.angularVelocity = angularVelocity;
+
 
         //var forwardWithOffset = Quaternion.Euler(rotationOffset) * _followTarget.up;
         //var crossProduct = Vector3.Cross(forwardWithOffset, _body.rotation * Vector3.up);
@@ -133,13 +146,14 @@ public class PhysicsHand : MonoBehaviour
 
     private void Grab(InputAction.CallbackContext context)
     {
+
         if (isGrabbing || heldObject) return;
         Collider[] grabbableColliders = Physics.OverlapSphere(palm.position, reachDistance, (int)grabbableLayer);
         if (grabbableColliders.Length < 1) return;
 
         var objectToGrab = grabbableColliders[0].transform.gameObject;
         var objectBody = objectToGrab.GetComponent<Rigidbody>();
-        
+
         if (objectBody != null)
         {
             heldObject = objectBody.gameObject;
@@ -158,6 +172,7 @@ public class PhysicsHand : MonoBehaviour
         }
 
         StartCoroutine(GrabObject(grabbableColliders[0], objectBody));
+
     }
 
     public IEnumerator GrabObject(Collider collider, Rigidbody objectBody)
