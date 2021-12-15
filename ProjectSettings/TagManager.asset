@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Gnome
   - VRCamera
+  - Date
   layers:
   - Default
   - TransparentFX
