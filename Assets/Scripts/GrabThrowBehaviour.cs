@@ -40,7 +40,7 @@ public class GrabThrowBehaviour : MonoBehaviour
     [SerializeField] bool charging = false;
     [SerializeField]private ParticleSystem chargeParticles;
     float chargePerSecond;
-    float timeToCharge = 10;
+    [SerializeField] float timeToCharge;
 
     //animation
     private Animator animator;
