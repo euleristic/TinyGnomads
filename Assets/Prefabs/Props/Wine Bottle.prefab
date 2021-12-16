@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 4385395139552695390}
   - component: {fileID: 1337154303969519257}
   - component: {fileID: 8138500432879959287}
+  - component: {fileID: 6275319380371565897}
   m_Layer: 7
   m_Name: Wine Bottle
   m_TagString: Untagged
@@ -434,6 +435,22 @@ MonoBehaviour:
   top: {fileID: 4458418201912215597}
   bottom: {fileID: 2246204884252331164}
   system: {fileID: 1189196882468500978}
+--- !u!114 &6275319380371565897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616619261452241469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 756584c7242d8214c873cebcd6ca9d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  breakObject: {fileID: 8316604062332447469, guid: ff244980128fca4418bec185914247ab,
+    type: 3}
+  breakVelocity: 4
+  dateReaction: -0.1
 --- !u!1 &8183206746395561638
 GameObject:
   m_ObjectHideFlags: 0

@@ -24536,7 +24536,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5872182827506667856}
   serializedVersion: 7
-  lengthInSec: 5
+  lengthInSec: 0.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -25361,7 +25361,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -39442,6 +39442,8 @@ MonoBehaviour:
   left_hand: {fileID: 0}
   right_hand: {fileID: 0}
   animator: {fileID: 1605092793836533922}
+  ps_struggle: {fileID: 0}
+  ps_escape: {fileID: 0}
 --- !u!114 &1807084613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39461,6 +39463,7 @@ MonoBehaviour:
   left_hand: {fileID: 0}
   right_hand: {fileID: 0}
   throw_force: 0.5
+  max_throw_force: 2
   charging: 0
   chargeParticles: {fileID: 3909047465502325669}
 --- !u!1 &7797701417805459446

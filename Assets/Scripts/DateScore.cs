@@ -9,6 +9,10 @@ public class DateScore : MonoBehaviour
     public static float value;
 
     static bool scoreUnlocked;
+
+    //animation and effects
+    static Animator dateAnim;
+    static ParticleSystem heartParticles;
     
     void Start()
     {
@@ -16,6 +20,14 @@ public class DateScore : MonoBehaviour
         value = .5f;
         gnomeCamSlider.value = value;
         scoreUnlocked = true;
+
+        dateAnim = GameObject.FindGameObjectWithTag("Date").GetComponent<Animator>();
+        heartParticles = GameObject.Find("Heart Particles").GetComponent<ParticleSystem>();
+
+        Debug.Log(dateAnim);
+        Debug.Log(heartParticles);
+        var heartPS = heartParticles.main;
+        heartPS.startSize = value * 0.1f;
     }
 
     ///<summary>
@@ -34,6 +46,20 @@ public class DateScore : MonoBehaviour
             if (value <= 0f); //Gnome wins
             if (value >= 1f); //VR wins
 
+
+            var heartPS = heartParticles.main;
+            heartPS.startSize = value * 0.1f;
+
+            if(term < 0)
+            {
+                dateAnim.SetTrigger("Bad");
+            }
+            else
+            {
+                dateAnim.SetTrigger("Good");
+            }
+
+            Debug.Log(value);
         }
 
     }
@@ -45,5 +71,9 @@ public class DateScore : MonoBehaviour
 
         if (value <= 0f) ; //Gnome wins
         if (value >= 1f) ; //VR wins
+
+        var heartPS = heartParticles.main;
+        heartPS.startSize = value * 0.1f;
+
     }
 }
