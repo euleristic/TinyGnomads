@@ -189,6 +189,7 @@ public class MovementBehavior : MonoBehaviour
                         if (hand.heldObject == gameObject)
                         {
                             hand.ReleaseObject();
+                            is_thrown = false;
                             ps_escape.Play();
                             breakAttempts = 0;
                         }
