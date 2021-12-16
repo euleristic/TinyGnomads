@@ -10,7 +10,7 @@ public class MakeStaticByTag : MonoBehaviour
     {
         if (!IUnderstand) return;
         GameObject[] objs = GameObject.FindGameObjectsWithTag(transform.tag);
-            
+
         if (objs.Length > 1)
         {
             Destroy(this.gameObject);
