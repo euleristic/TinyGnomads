@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class MovementBehavior : MonoBehaviour
 {
@@ -275,15 +274,5 @@ public class MovementBehavior : MonoBehaviour
         Vector3 sphere_position = transform.position - new Vector3(0, gnome_height * 0.05f, 0);
         float sphere_radius = gnome_lenght / 2 /*- gnome_lenght * 0.05f*/;
         Gizmos.DrawSphere(sphere_position, sphere_radius);
-    }
-
-
-
-    public void reloadScene(InputAction.CallbackContext context)
-    {
-        if(context.performed)
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }

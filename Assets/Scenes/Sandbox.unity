@@ -251,7 +251,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7797701418769381147}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1866456101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 973f63b19c442944285ce00da23d764b, type: 3}
@@ -1470,7 +1470,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7797701418769381147}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1866456101}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93c354b0e8deae24ea855d3773c70c37, type: 3}
@@ -43816,6 +43816,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1981907867}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1866456101 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7797701417409775488, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
+    type: 3}
+  m_PrefabInstance: {fileID: 7797701418769381147}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1866456107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866456101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc708f383152264ea50532e574de9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1866538659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2945298957642648572, guid: 72309148e720b0842be4dae5c6804eb5,
@@ -58084,7 +58102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 60619231}
+      objectReference: {fileID: 1866456107}
     - target: {fileID: 7797701417409775544, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -58118,7 +58136,7 @@ PrefabInstance:
     - target: {fileID: 7797701417409775544, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
       propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: MovementBehavior, Assembly-CSharp
+      value: MenuBehaviour, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7797701417409775544, guid: 5c75b2f15ab7be14fa3cea1d11fe300e,
         type: 3}
