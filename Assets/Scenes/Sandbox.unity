@@ -32284,7 +32284,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1415977671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.154, y: -0.7794, z: 5.994}
+  m_LocalPosition: {x: -5.154, y: -0.018, z: 5.994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -32305,7 +32305,7 @@ MonoBehaviour:
   partPrefab: {fileID: 543290261951322147, guid: bacca79fd75f25c4db972ab74e965e4c,
     type: 3}
   parentObject: {fileID: 967326211}
-  length: 100
+  length: 1
   partDistance: 0.16
   reset: 0
   spawn: 1
