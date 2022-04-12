@@ -43,6 +43,16 @@ public class Spider : MonoBehaviour
     //for staying stationary
     //public bool is_stationary = false;
 
+    //timer
+    public float timer;
+    public float timer_interval;
+    public bool started_timer;
+    public bool boolean_to_change;
+    public bool can_hit_again;
+
+    private bool can_move;
+    private string action_to_do;
+
 
     // Start is called before the first frame update
     void Start()
@@ -57,12 +67,100 @@ public class Spider : MonoBehaviour
 
         is_moving = false;
         going_back = false;
+        started_timer = false;
+        can_hit_again = true;
+        can_move = false;
         //chosen_random_direction = false;
         original_position = transform.position;
+
+        StartWallTimer(1.0f, "spider_movement");
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if (started_timer)
+        {
+            UpdateTimer();
+        }
+        if (can_move)
+        {
+            Move();
+        }
+    }
+
+
+    public void StartWallTimer(float interval, string action)
+    {
+        timer = 0;
+        started_timer = true;
+
+        timer_interval = interval;
+
+        if(action == "spider_collision")
+        {
+            action_to_do = "spider_collision";
+        }
+        else if(action == "spider_movement")
+        {
+            action_to_do = "spider_movement";
+        }
+    }
+
+    private void ChangeBoolean()
+    {
+        if (action_to_do == "spider_collision")
+        {
+            can_hit_again = true;
+        }
+        else if (action_to_do == "spider_movement")
+        {
+            can_move = true;
+            print("can move");
+        }
+    }
+
+    private void resetWallCanHit()
+    {
+        can_hit_again = true;
+    }
+
+    private void UpdateTimer()
+    {
+        timer += Time.deltaTime;
+
+        if (timer >= timer_interval)
+        {
+            started_timer = false;
+            ChangeBoolean();
+            timer = 0;
+        }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Wall"))
+        {
+            hit_wall = false;
+            print("turned from wall");
+        }
+    }
+
+    private void OnCollisionStay(Collision other)
+    {
+        if(can_hit_again)
+        {
+            if (other.gameObject.CompareTag("Wall"))
+            {
+                hit_wall = true;
+                print("hit wall");
+                can_hit_again = false;
+                StartWallTimer(Random.Range(0.2f,2.5f), "spider_collision");
+            }
+        }  
+    }
+
+    private void Move()
     {
         InstantlyTurn(agent.destination);
         //Vector3 head_to_hand = transform.position - head_transform.position;
@@ -93,9 +191,6 @@ public class Spider : MonoBehaviour
 
         //}
 
-
-
-
         //for Roaming randomly
 
         if (is_moving == false && chosen_random_direction == false)
@@ -122,13 +217,12 @@ public class Spider : MonoBehaviour
             is_moving = false;
         }
         //just for testing uncomment commented !IsReachable() above ^^^
-        //if (hit_wall == true)
-        //{
-        //    //going_back = true;
-        //    print("hit wall");
-        //    is_moving = false;
-        //    hit_wall = false;
-        //}
+        if (hit_wall == true)
+        {
+            //going_back = true;
+            hit_wall = false;
+            is_moving = false;
+        }
 
         // for going to original position
 
@@ -147,22 +241,6 @@ public class Spider : MonoBehaviour
         //        //Debug.Log("not going back");
         //    }
         //}
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            is_moving = false;
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            is_moving = false;
-        }
     }
 
     //private bool IsReachable()
