@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 701f516e383743448bbfe8bee27472aa
+guid: 960156087f9869c47be32ef41ba63043
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -7,23 +7,8 @@ ModelImporter:
       74: 4781951162920444690
     second: Armature|ArmatureAction
   - first:
-      74: 2032006322983563124
-    second: Armature|Band_Charm.001Action
-  - first:
       74: 8402148741902063712
     second: Armature|Band_CharmAction
-  - first:
-      74: -3503736339473513847
-    second: Band_Charm|Band_Charm.001Action
-  - first:
-      74: -427342761024049278
-    second: Band_Charm|Band_CharmAction
-  - first:
-      74: -5677329911807208789
-    second: Band_Charm.001|Band_Charm.001Action
-  - first:
-      74: -6295827957633859341
-    second: Band_Charm.001|Band_CharmAction
   - first:
       74: -8927101630316412389
     second: Armature|Band_CharmAction.001
