@@ -122,13 +122,13 @@ public class Spider : MonoBehaviour
             is_moving = false;
         }
         //just for testing uncomment commented !IsReachable() above ^^^
-        if (hit_wall == true)
-        {
-            //going_back = true;
-            print("hit wall");
-            is_moving = false;
-            hit_wall = false;
-        }
+        //if (hit_wall == true)
+        //{
+        //    //going_back = true;
+        //    print("hit wall");
+        //    is_moving = false;
+        //    hit_wall = false;
+        //}
 
         // for going to original position
 
@@ -149,42 +149,43 @@ public class Spider : MonoBehaviour
         //}
     }
 
-    private void OnCollisonStay(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Wall"))
-        {
-            hit_wall = true;
-        }
-    }
-    private void OnCollisonEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Wall"))
         {
-            hit_wall = true;
+            is_moving = false;
         }
     }
 
-    private bool IsReachable()
+    private void OnCollisionEnter(Collision collision)
     {
-        NavMeshPath navMeshPath = new NavMeshPath();
-        //Vector3 head_to_hand = transform.position - head_transform.position;
-        //create path and check if it can be done
-        // and check if navMeshAgent can reach its target
-
-        if (agent.CalculatePath(agent.destination, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+        if (collision.gameObject.CompareTag("Wall"))
         {
-            //if (head_to_hand.magnitude > detection_radius)
-            //{
-            //    //Debug.Log("Far Away");
-            //    return false;
-            //}
-            return true;
-        }
-        else
-        {
-            return false;
+            is_moving = false;
         }
     }
+
+    //private bool IsReachable()
+    //{
+    //    NavMeshPath navMeshPath = new NavMeshPath();
+    //    //Vector3 head_to_hand = transform.position - head_transform.position;
+    //    //create path and check if it can be done
+    //    // and check if navMeshAgent can reach its target
+
+    //    if (agent.CalculatePath(agent.destination, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+    //    {
+    //        //if (head_to_hand.magnitude > detection_radius)
+    //        //{
+    //        //    //Debug.Log("Far Away");
+    //        //    return false;
+    //        //}
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        return false;
+    //    }
+    //}
 
     private void InstantlyTurn(Vector3 destination)
     {
