@@ -34,6 +34,7 @@ public class Spider : MonoBehaviour
     //for reseting position
     public bool is_moving;
     public bool going_back;
+    public bool hit_wall;
 
     //for Roaming
     private bool chosen_random_direction;
@@ -114,12 +115,20 @@ public class Spider : MonoBehaviour
             print("going to destination");
             chosen_random_direction = false;
         }
-        if (agent.remainingDistance <= 0.01f)
+        if (agent.remainingDistance <= 0.01f /*|| !IsReachable()*/)
         {
             //going_back = true;
             print("reached destination");
             is_moving = false;
         }
+        //just for testing uncomment commented !IsReachable() above ^^^
+        //if (hit_wall == true)
+        //{
+        //    //going_back = true;
+        //    print("hit wall");
+        //    is_moving = false;
+        //    hit_wall = false;
+        //}
 
         // for going to original position
 
@@ -140,19 +149,36 @@ public class Spider : MonoBehaviour
         //}
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            is_moving = false;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            is_moving = false;
+        }
+    }
+
     //private bool IsReachable()
     //{
     //    NavMeshPath navMeshPath = new NavMeshPath();
-    //    Vector3 head_to_hand = transform.position - head_transform.position;
+    //    //Vector3 head_to_hand = transform.position - head_transform.position;
     //    //create path and check if it can be done
     //    // and check if navMeshAgent can reach its target
-    //    if (agent.CalculatePath(head_transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+
+    //    if (agent.CalculatePath(agent.destination, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
     //    {
-    //        if (head_to_hand.magnitude > detection_radius)
-    //        {
-    //            //Debug.Log("Far Away");
-    //            return false;
-    //        }
+    //        //if (head_to_hand.magnitude > detection_radius)
+    //        //{
+    //        //    //Debug.Log("Far Away");
+    //        //    return false;
+    //        //}
     //        return true;
     //    }
     //    else

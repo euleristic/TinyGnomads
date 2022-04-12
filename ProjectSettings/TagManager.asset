@@ -8,6 +8,7 @@ TagManager:
   - VRCamera
   - Date
   - InputDeviceManager
+  - Wall
   layers:
   - Default
   - TransparentFX
