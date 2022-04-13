@@ -6584,6 +6584,7 @@ GameObject:
   - component: {fileID: 2024014349415364901}
   - component: {fileID: 2024014349415364900}
   - component: {fileID: 2024014349415364903}
+  - component: {fileID: 2024014349415364905}
   - component: {fileID: 2024014349415364904}
   m_Layer: 0
   m_Name: HigDefMesh2
@@ -6715,6 +6716,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedTreshold: 0.1
   smoothing: 0.3
+--- !u!114 &2024014349415364905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024014349415364899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de30a5dba47a936459e73b1fa24a5001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footOffset: {x: 0, y: 0.07, z: 0}
+  rightFootPosWeight: 1
+  rightFootRotWeight: 1
+  leftFootPosWeight: 1
+  leftFootRotWeight: 1
 --- !u!1 &2043734056288233748
 GameObject:
   m_ObjectHideFlags: 0
@@ -8423,7 +8441,7 @@ PrefabInstance:
     - target: {fileID: 7722134710055584172, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7722134710055584172, guid: efef19a6046a72a43abd05177636eeb8,
         type: 3}
@@ -8576,7 +8594,7 @@ PrefabInstance:
     - target: {fileID: 4946337698396384185, guid: 15d10b26e24b09a40967cbf06e4b014b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4946337698396384185, guid: 15d10b26e24b09a40967cbf06e4b014b,
         type: 3}
