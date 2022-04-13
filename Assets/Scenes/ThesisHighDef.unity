@@ -3799,6 +3799,11 @@ MonoBehaviour:
   is_moving: 0
   going_back: 0
   hit_wall: 0
+  timer: 0
+  timer_interval: 0
+  started_timer: 0
+  boolean_to_change: 0
+  can_hit_again: 0
 --- !u!65 &1428583914
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5761,6 +5766,11 @@ MonoBehaviour:
   is_moving: 0
   going_back: 0
   hit_wall: 0
+  timer: 0
+  timer_interval: 0
+  started_timer: 0
+  boolean_to_change: 0
+  can_hit_again: 0
 --- !u!4 &931556616096722687
 Transform:
   m_ObjectHideFlags: 0
@@ -6702,8 +6712,8 @@ MonoBehaviour:
   head:
     vrTarget: {fileID: 4442251851259995538}
     rigTarget: {fileID: 88287580}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingPositionOffset: {x: 0.015, y: -0.16, z: -0.2}
+    trackingRotationOffset: {x: 0, y: 13.05, z: 6.37}
   leftHand:
     vrTarget: {fileID: 4442251851259995536}
     rigTarget: {fileID: 545837055}
