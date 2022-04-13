@@ -1912,6 +1912,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Big Spider
       objectReference: {fileID: 0}
+    - target: {fileID: 3001874648610884481, guid: a973339aca5c75e4e897ff8c57bf3997,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3001874648610884491, guid: a973339aca5c75e4e897ff8c57bf3997,
         type: 3}
       propertyPath: m_RootOrder
@@ -2320,6 +2325,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spider
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148481130216006303, guid: 348bb7e52b0f15a47bf500dcda0a415a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 348bb7e52b0f15a47bf500dcda0a415a, type: 3}
