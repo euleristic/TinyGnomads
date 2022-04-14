@@ -157,6 +157,13 @@ public class Spider : MonoBehaviour
                 can_hit_again = false;
                 StartWallTimer(Random.Range(0.2f,2.5f), "spider_collision");
             }
+            if (other.gameObject.CompareTag("Hand Wall"))
+            {
+                hit_wall = true;
+                print("hit hand");
+                can_hit_again = false;
+                StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
+            }
         }  
     }
 

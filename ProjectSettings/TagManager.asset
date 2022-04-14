@@ -10,6 +10,7 @@ TagManager:
   - InputDeviceManager
   - Wall
   - Legs
+  - Hand Wall
   layers:
   - Default
   - TransparentFX
