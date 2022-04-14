@@ -30,7 +30,7 @@ public class VRRig : MonoBehaviour
 
     void Start()
     {
-        headBodyOffset = transform.position - headConstraint.position + new Vector3 (0.0f, 0.1f, 0.0f);
+        headBodyOffset = transform.position - headConstraint.position /*+ new Vector3 (0.0f, 0.1f, 0.0f)*/;
     }
 
 
