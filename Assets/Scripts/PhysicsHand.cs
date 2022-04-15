@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
@@ -184,6 +185,11 @@ public class PhysicsHand : MonoBehaviour
             movement_behavior.is_grabbed = true;
         }
 
+        if (objectBody.gameObject.CompareTag("Spider"))
+        {
+            objectBody.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        }
+
         //create a grab point
         grabPoint = new GameObject().transform;
         grabPoint.position = collider.ClosestPoint(palm.position);
@@ -258,6 +264,11 @@ public class PhysicsHand : MonoBehaviour
                 movement_behavior.is_thrown = true;
                 movement_behavior.resetRotation();
             }
+            //if (objectBody.gameObject.CompareTag("Spider"))
+            //{
+            //    objectBody.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+            //}
+
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;
             heldObject = null;
