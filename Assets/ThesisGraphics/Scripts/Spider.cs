@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Spider : MonoBehaviour
 {
     private Vector3 original_position;
+    private Quaternion original_rotaion;
 
     public NavMeshAgent agent;
     public float rotSpeed = 20.0f;
@@ -51,6 +52,7 @@ public class Spider : MonoBehaviour
         can_move = false;
         //chosen_random_direction = false;
         original_position = transform.position;
+        original_rotaion = transform.rotation;
 
         StartWallTimer(start_moving_after, "spider_movement");
     }
@@ -144,6 +146,22 @@ public class Spider : MonoBehaviour
                 StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
             }
         }  
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Table"))
+        {
+            transform.rotation = new Quaternion(original_rotaion.x, 0.0f, original_rotaion.z, 0.0f);
+            gameObject.GetComponent<NavMeshAgent>().enabled = true;
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<NavMeshAgent>().enabled = true;
+        }
+        if (other.gameObject.CompareTag("Floor"))
+        {
+            transform.position = original_position;
+            transform.rotation = original_rotaion;
+        }
     }
 
     private void Move()

@@ -264,6 +264,10 @@ public class PhysicsHand : MonoBehaviour
                 movement_behavior.is_thrown = true;
                 movement_behavior.resetRotation();
             }
+            //if (objectBody.gameObject.CompareTag("Spider"))
+            //{
+            //    objectBody.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+            //}
 
             objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
             objectBody.interpolation = RigidbodyInterpolation.None;

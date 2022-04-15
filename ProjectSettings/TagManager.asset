@@ -12,6 +12,8 @@ TagManager:
   - Legs
   - Hand Wall
   - Spider
+  - Table
+  - Floor
   layers:
   - Default
   - TransparentFX

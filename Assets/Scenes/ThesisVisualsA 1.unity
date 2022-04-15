@@ -525,6 +525,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c989c72d2a0dd4fb78eb33a2f32f02, type: 3}
+--- !u!1 &277099245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277099246}
+  - component: {fileID: 277099247}
+  m_Layer: 0
+  m_Name: Nav collider
+  m_TagString: Table
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277099246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277099245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 969739215}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &277099247
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277099245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9400312, y: 0.915254, z: 0.90702283}
+  m_Center: {x: 0.0075533777, y: -0.042372942, z: -0.004399836}
 --- !u!1 &295288197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,7 +1304,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.2761679, y: 4.718, z: 8.325999}
   m_LocalScale: {x: 1.4665892, y: 0.073961, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 277099246}
   m_Father: {fileID: 1193368301}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1271,6 +1316,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1243857948473194490, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: TAAQuality
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243857948473194492, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243857948473194492, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.657
+      objectReference: {fileID: 0}
     - target: {fileID: 4804858370805094205, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: turnSmoothness
@@ -1364,12 +1424,12 @@ PrefabInstance:
     - target: {fileID: 6837046708218512308, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7415896981478702586, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7926274540057110465, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
@@ -1391,7 +1451,7 @@ GameObject:
   - component: {fileID: 1045627709}
   m_Layer: 12
   m_Name: ColliderFloor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1739,7 +1799,7 @@ PrefabInstance:
     - target: {fileID: 4637231095728161991, guid: aec9db584ae38a4448768489006ec637,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4637231095728161991, guid: aec9db584ae38a4448768489006ec637,
         type: 3}
@@ -2350,7 +2410,7 @@ Transform:
   m_GameObject: {fileID: 1724274463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0205, y: 0.796, z: -1.661}
-  m_LocalScale: {x: 0.15348314, y: 1, z: 0.111117214}
+  m_LocalScale: {x: 0.1593462, y: 1, z: 0.113139555}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -2481,7 +2541,7 @@ PrefabInstance:
     - target: {fileID: 4637231095728161991, guid: c32bb2616bc498f4a80e21d9122d9d62,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4637231095728161991, guid: c32bb2616bc498f4a80e21d9122d9d62,
         type: 3}
