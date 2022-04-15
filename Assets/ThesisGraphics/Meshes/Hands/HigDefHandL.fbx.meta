@@ -15,6 +15,9 @@ ModelImporter:
   - first:
       74: 8669396047744177645
     second: Hand_point.001
+  - first:
+      74: -4445736625706868207
+    second: Hand_Scratch.001
   externalObjects: {}
   materials:
     materialImportMode: 2
