@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Grip
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature.001
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.001
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.001/left_wrist.007
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.001/left_wrist.007/left_wrist.013
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.001/left_wrist.007/left_wrist.013/left_wrist.019
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.002
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.002/left_wrist.003
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.002/left_wrist.003/left_wrist.014
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.002/left_wrist.003/left_wrist.014/left_wrist.016
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.004
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.004/left_wrist.005
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.004/left_wrist.005/left_wrist.015
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.006
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.006/left_wrist.009
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.006/left_wrist.009/left_wrist.010
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.006/left_wrist.009/left_wrist.010/left_wrist.018
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.008
+    m_Weight: 0
+  - m_Path: Armature.001/left_wrist.008/left_wrist.011
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.008/left_wrist.011/left_wrist.012
+    m_Weight: 1
+  - m_Path: Armature.001/left_wrist.008/left_wrist.011/left_wrist.012/left_wrist.017
+    m_Weight: 1
+  - m_Path: model.001
+    m_Weight: 0
