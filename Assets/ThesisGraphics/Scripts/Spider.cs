@@ -5,31 +5,10 @@ using UnityEngine.AI;
 
 public class Spider : MonoBehaviour
 {
-    //public Transform head_transform;
-    //private Transform camera_transform;
     private Vector3 original_position;
 
     public NavMeshAgent agent;
     public float rotSpeed = 20.0f;
-
-    //private const float DESTINATION_INTERVAL = 0.0f;
-    //private float destination_timer;
-
-    //private float camera_fov;
-
-    //private float detection_radius = 15.0f;
-    //private float camera_fov_vision_expansion = 10.0f;
-
-    //public Animator animator;
-
-    //private float slap_timer;
-    //private const float SLAP_INTERVAL = 0.5f;
-    //private bool waited_after_slap = false, can_start_timer = false, has_slaped = false;
-
-    //stun
-    //private float stun_timer;
-    //private const float STUN_INTERVAL = 4.0f;
-    //private bool stunned = false;
 
     //for reseting position
     public bool is_moving;
@@ -51,8 +30,8 @@ public class Spider : MonoBehaviour
     public bool can_hit_again;
 
     private bool can_move;
+    private float start_moving_after = 2.0f;
     private string action_to_do;
-
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +52,7 @@ public class Spider : MonoBehaviour
         //chosen_random_direction = false;
         original_position = transform.position;
 
-        StartWallTimer(1.0f, "spider_movement");
+        StartWallTimer(start_moving_after, "spider_movement");
     }
 
     // Update is called once per frame
@@ -116,7 +95,7 @@ public class Spider : MonoBehaviour
         else if (action_to_do == "spider_movement")
         {
             can_move = true;
-            print("can move");
+            //print("can move");
         }
     }
 
@@ -142,7 +121,7 @@ public class Spider : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             hit_wall = false;
-            print("turned from wall");
+            //print("turned from wall");
         }
     }
 
@@ -153,7 +132,7 @@ public class Spider : MonoBehaviour
             if (other.gameObject.CompareTag("Wall"))
             {
                 hit_wall = true;
-                print("hit wall");
+                //print("hit wall");
                 can_hit_again = false;
                 StartWallTimer(Random.Range(0.2f,2.5f), "spider_collision");
             }
@@ -208,19 +187,19 @@ public class Spider : MonoBehaviour
             NavMesh.SamplePosition(randomDirection, out hit, 0.6f, 1);
             randomPosition = hit.position;
             chosen_random_direction = true;
-            print("chose direction");
+            //print("chose direction");
         }
         if (chosen_random_direction == true)
         {
             is_moving = true;
             agent.SetDestination(randomPosition);
-            print("going to destination");
+            //print("going to destination");
             chosen_random_direction = false;
         }
         if (agent.remainingDistance <= 0.01f /*|| !IsReachable()*/)
         {
             //going_back = true;
-            print("reached destination");
+            //print("reached destination");
             is_moving = false;
         }
         //just for testing uncomment commented !IsReachable() above ^^^

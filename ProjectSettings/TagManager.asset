@@ -11,6 +11,7 @@ TagManager:
   - Wall
   - Legs
   - Hand Wall
+  - Spider
   layers:
   - Default
   - TransparentFX
