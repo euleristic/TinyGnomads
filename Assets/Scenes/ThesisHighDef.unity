@@ -148,7 +148,8 @@ MonoBehaviour:
     m_Bits: 0
   heldCollider: {fileID: 0}
   movement_behavior: {fileID: 0}
-  trigger_input_reference: {fileID: 0}
+  trigger_input_reference: {fileID: -1444255343148884205, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
 --- !u!114 &8526154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de954c19d3a0746ba2fd6dd8c65322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
 --- !u!95 &8526155
 Animator:
   serializedVersion: 3
@@ -3780,10 +3781,10 @@ MonoBehaviour:
   m_PositionAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Position
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 838fac50-f87c-4bee-a8a7-280f758f9e2d
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3791,10 +3792,10 @@ MonoBehaviour:
   m_RotationAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Rotation
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 25e4f341-340e-46d3-b93b-5e4ca667f4ff
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3802,10 +3803,10 @@ MonoBehaviour:
   m_SelectAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Select
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: e8aec9bc-395b-4e0a-b221-808733d13e80
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3813,10 +3814,10 @@ MonoBehaviour:
   m_ActivateAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Activate
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: f998ae0d-5293-47c7-9aa0-cef146b78dfd
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3824,10 +3825,10 @@ MonoBehaviour:
   m_UIPressAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: UI Press
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 18bd9126-c895-4ff4-a7f4-30ab279dbc79
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3835,10 +3836,10 @@ MonoBehaviour:
   m_HapticDeviceAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Haptic Device
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 7ed7ea04-19d2-4fab-9a1e-ffab67f64d36
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3846,10 +3847,10 @@ MonoBehaviour:
   m_RotateAnchorAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Rotate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 0c93dfef-7563-404c-ac4a-86979d02c208
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -3857,10 +3858,10 @@ MonoBehaviour:
   m_TranslateAnchorAction:
     m_UseReference: 0
     m_Action:
-      m_Name: 
+      m_Name: Translate Anchor
       m_Type: 0
       m_ExpectedControlType: 
-      m_Id: 
+      m_Id: 55633a05-f9e6-4258-a185-1b7275008bff
       m_Processors: 
       m_Interactions: 
       m_SingletonActionBindings: []
@@ -9389,6 +9390,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3204474078669893029, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e26a66e93d77bd4a844772babab8c61, type: 2}
+    - target: {fileID: 3204474078669893029, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0b2cd3ac55f82d47a65eda8fac31076, type: 2}
     - target: {fileID: 4283124697173868493, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -9597,7 +9608,7 @@ PrefabInstance:
     - target: {fileID: 5174519603941261373, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.931
+      value: -2.667
       objectReference: {fileID: 0}
     - target: {fileID: 5174519603941261373, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
@@ -12087,7 +12098,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9173169350904189866}
   - component: {fileID: 8360497579902191891}
-  - component: {fileID: 8360497579902191890}
   - component: {fileID: 8360497579902191889}
   m_Layer: 0
   m_Name: NewhdhandR
@@ -12108,33 +12118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23de954c19d3a0746ba2fd6dd8c65322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
---- !u!114 &8360497579902191890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360497579902191888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6517ade1fffe2e144af36d202e6ca16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  followSpeed: 30
-  rotateSpeed: 100
-  positionOffset: {x: 0, y: 0, z: 0}
-  rotationOffset: {x: 0, y: 0, z: 0}
-  palm: {fileID: 0}
-  reachDistance: 0.1
-  jointDistance: 0.05
-  grabbableLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  heldCollider: {fileID: 0}
-  movement_behavior: {fileID: 0}
-  trigger_input_reference: {fileID: 0}
+  speed: 15
 --- !u!95 &8360497579902191891
 Animator:
   serializedVersion: 3
@@ -12144,8 +12128,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8360497579902191888}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c842ecc047f4c894cb8c548c8b22a08d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3af8d2c80fecbce42936f89d6edac423, type: 2}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cf5395a9472f534597c5b6a47749d04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
