@@ -9390,6 +9390,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3204474078669893029, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e26a66e93d77bd4a844772babab8c61, type: 2}
+    - target: {fileID: 3204474078669893029, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: d0b2cd3ac55f82d47a65eda8fac31076, type: 2}
     - target: {fileID: 4283124697173868493, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -9598,7 +9608,7 @@ PrefabInstance:
     - target: {fileID: 5174519603941261373, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.931
+      value: -2.667
       objectReference: {fileID: 0}
     - target: {fileID: 5174519603941261373, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
@@ -12088,7 +12098,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9173169350904189866}
   - component: {fileID: 8360497579902191891}
-  - component: {fileID: 8360497579902191890}
   - component: {fileID: 8360497579902191889}
   m_Layer: 0
   m_Name: NewhdhandR
@@ -12110,33 +12119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 15
---- !u!114 &8360497579902191890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360497579902191888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6517ade1fffe2e144af36d202e6ca16a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  followSpeed: 30
-  rotateSpeed: 100
-  positionOffset: {x: 0, y: 0, z: 0}
-  rotationOffset: {x: 0, y: 0, z: 0}
-  palm: {fileID: 0}
-  reachDistance: 0.1
-  jointDistance: 0.05
-  grabbableLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  heldCollider: {fileID: 0}
-  movement_behavior: {fileID: 0}
-  trigger_input_reference: {fileID: -8547354368623688748, guid: c348712bda248c246b8c49b3db54643f,
-    type: 3}
 --- !u!95 &8360497579902191891
 Animator:
   serializedVersion: 3
@@ -12146,8 +12128,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8360497579902191888}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: c842ecc047f4c894cb8c548c8b22a08d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3af8d2c80fecbce42936f89d6edac423, type: 2}
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5cf5395a9472f534597c5b6a47749d04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
