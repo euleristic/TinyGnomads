@@ -1496,7 +1496,12 @@ PrefabInstance:
     - target: {fileID: 1243857948473194490, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: TAAQuality
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1243857948473194490, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: antialiasing
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1243857948473194490, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
