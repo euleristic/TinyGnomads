@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Spider : MonoBehaviour
 {
     private Vector3 original_position;
-    private Quaternion original_rotaion;
+    private Quaternion original_rotation;
 
     public NavMeshAgent agent;
     public float rotSpeed = 20.0f;
@@ -52,7 +52,7 @@ public class Spider : MonoBehaviour
         can_move = false;
         //chosen_random_direction = false;
         original_position = transform.position;
-        original_rotaion = transform.rotation;
+        original_rotation = transform.rotation;
 
         StartWallTimer(start_moving_after, "spider_movement");
     }
@@ -145,6 +145,13 @@ public class Spider : MonoBehaviour
                 can_hit_again = false;
                 StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
             }
+            if (other.gameObject.CompareTag("Stick Wall"))
+            {
+                hit_wall = true;
+                print("hit stick");
+                can_hit_again = false;
+                StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
+            }
         }  
     }
 
@@ -152,7 +159,7 @@ public class Spider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Table"))
         {
-            transform.rotation = new Quaternion(original_rotaion.x, 0.0f, original_rotaion.z, 0.0f);
+            transform.rotation = new Quaternion(original_rotation.x, 0.0f, original_rotation.z, 0.0f);
             gameObject.GetComponent<NavMeshAgent>().enabled = true;
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
             gameObject.GetComponent<NavMeshAgent>().enabled = true;
@@ -160,7 +167,7 @@ public class Spider : MonoBehaviour
         if (other.gameObject.CompareTag("Floor"))
         {
             transform.position = original_position;
-            transform.rotation = original_rotaion;
+            transform.rotation = original_rotation;
         }
     }
 
