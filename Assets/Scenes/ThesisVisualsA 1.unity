@@ -986,6 +986,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1c989c72d2a0dd4fb78eb33a2f32f02, type: 3}
+--- !u!1 &531103528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4809070171742935979, guid: 434e59b6d2b13794c842e4a8323d3923,
+    type: 3}
+  m_PrefabInstance: {fileID: 4203104043970575091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &589082611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1665,6 +1671,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d21630d350d5864ab6640b5bc17bc19, type: 3}
+--- !u!1 &1013507596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3001874648610884481, guid: a973339aca5c75e4e897ff8c57bf3997,
+    type: 3}
+  m_PrefabInstance: {fileID: 3001874649498107494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1045627708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,6 +1811,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125109424}
   - component: {fileID: 1125109423}
+  - component: {fileID: 1125109425}
   m_Layer: 0
   m_Name: GameBehaviour
   m_TagString: Untagged
@@ -1818,6 +1831,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ae13b17e88b6a44eb920aa5d967aab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glass: {fileID: 2119741002}
+  spider: {fileID: 1013507596}
+  car: {fileID: 531103528}
 --- !u!4 &1125109424
 Transform:
   m_ObjectHideFlags: 0
@@ -1826,12 +1842,131 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125109422}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.607163, y: -4.453888, z: 2.1368234}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 589082612}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125109425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125109422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 5b522cd09f557144aaf84489a38adbba,
+    type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eda55936-5d5f-4ac0-9d69-6ceb12d2558b
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1125109423}
+        m_TargetAssemblyTypeName: GameBehaviour, Assembly-CSharp
+        m_MethodName: resetGlass
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d34fb906-3221-4cb5-8246-b8c7393794cd
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8fb2b370-5b65-4601-9d23-0cbd33b58abc
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9dd94a5-bb9b-4c46-8c73-5883ad631a85
+    m_ActionName: Player/Grab[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: df0e957a-c714-4279-8393-67d460b218c1
+    m_ActionName: Player/Throw[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1125109423}
+        m_TargetAssemblyTypeName: GameBehaviour, Assembly-CSharp
+        m_MethodName: activateCar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c4b998cf-ca7c-4905-b3bf-0a7a5b2e7475
+    m_ActionName: Player/Restart[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b40e193b-365e-44de-90cd-0ac31a78ee1c
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fe038a50-eef4-4c8d-a992-7ba320ca3727
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 924c50d6-7e8b-41e4-b5d7-7100c5ed9684
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4735746-7436-4ae3-afae-e451738fa1b8
+    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f83e455f-b9de-4b58-9f1d-9b9780aede0c
+    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 21eb9b68-e40a-4f1c-a3cd-c49c5d82802a
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2222fb88-29e2-468d-9a2b-14eb89507add
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 16bc796e-66a0-40d4-96d0-c306d0f1e1c1
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 60133546-c7d3-4bd7-b93d-0f4ecbd6f543
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ff75361-f05c-4acb-88d2-100b28f07851
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard & Mouse and Gamepad
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1145734259
 GameObject:
   m_ObjectHideFlags: 0
@@ -3474,6 +3609,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &2119741002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 857241747022768109, guid: 86ccc739a9eeae94f9add67f73459ed7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1898637374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2126887290
 GameObject:
   m_ObjectHideFlags: 0
