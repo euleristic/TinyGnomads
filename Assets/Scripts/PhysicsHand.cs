@@ -39,8 +39,9 @@ public class PhysicsHand : MonoBehaviour
 
 
     //animation
-    float grabbing_float;
+    float grabbing_float, pinch_float;
     [SerializeField] InputActionReference trigger_input_reference;
+    [SerializeField] InputActionReference grip_input_reference;
     Animator hand_animator;
 
     Quaternion Modulate360(Quaternion q)
@@ -82,8 +83,11 @@ public class PhysicsHand : MonoBehaviour
     void Update()
     {
         ReadFollow();
-        grabbing_float = trigger_input_reference.action.ReadValue<float>();
+        pinch_float = trigger_input_reference.action.ReadValue<float>();
+        grabbing_float = grip_input_reference.action.ReadValue<float>();
+
         hand_animator.SetFloat("Trigger", grabbing_float);
+        hand_animator.SetFloat("Grip", pinch_float);
     }
 
     void FixedUpdate()
@@ -210,7 +214,7 @@ public class PhysicsHand : MonoBehaviour
         objectBody.velocity = Vector3.zero;
         objectBody.angularVelocity = Vector3.zero;
 
-        objectBody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         objectBody.interpolation = RigidbodyInterpolation.Interpolate;
 
         //attach joints
@@ -269,7 +273,7 @@ public class PhysicsHand : MonoBehaviour
             //    objectBody.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
             //}
 
-            objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             objectBody.interpolation = RigidbodyInterpolation.None;
             heldObject = null;
         }
