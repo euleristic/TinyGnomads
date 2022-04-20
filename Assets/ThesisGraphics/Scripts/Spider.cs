@@ -141,14 +141,14 @@ public class Spider : MonoBehaviour
             if (other.gameObject.CompareTag("Hand Wall"))
             {
                 hit_wall = true;
-                print("hit hand");
+                
                 can_hit_again = false;
                 StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
             }
             if (other.gameObject.CompareTag("Stick Wall"))
             {
                 hit_wall = true;
-                print("hit stick");
+                //print("hit stick");
                 can_hit_again = false;
                 StartWallTimer(Random.Range(0.1f, 0.1f), "spider_collision");
             }
@@ -168,6 +168,10 @@ public class Spider : MonoBehaviour
         {
             transform.position = original_position;
             transform.rotation = original_rotation;
+        }
+        if (other.gameObject.CompareTag("Hand Wall"))
+        {
+            print("hit hand");
         }
     }
 
