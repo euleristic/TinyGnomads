@@ -985,6 +985,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 481289564192125848, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
+    - target: {fileID: 750648774834842355, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.749078
+      objectReference: {fileID: 0}
+    - target: {fileID: 750648774834842355, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.4645389
+      objectReference: {fileID: 0}
     - target: {fileID: 1052421365237380433, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_IsActive
@@ -1007,6 +1017,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8547354368623688748, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
+    - target: {fileID: 3630545440953291965, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1.749078
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630545440953291965, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.46453893
+      objectReference: {fileID: 0}
     - target: {fileID: 5124554905572615925, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: grip_input_reference
