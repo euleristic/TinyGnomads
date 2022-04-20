@@ -28,6 +28,9 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] float reachDistance = 0.1f, jointDistance = 0.05f;
     public LayerMask grabbableLayer;
 
+    //fingers collider
+    [SerializeField] GameObject fingers_collider_game_object;
+
     private bool isGrabbing;
     [System.NonSerialized] public GameObject heldObject;
     public Collider heldCollider;
@@ -151,6 +154,11 @@ public class PhysicsHand : MonoBehaviour
 
     private void Grab(InputAction.CallbackContext context)
     {
+        //hand collider change (fingers remove)
+        if(fingers_collider_game_object != null)
+        {
+            fingers_collider_game_object.SetActive(false);
+        }
 
         if (isGrabbing || heldObject) return;
         Collider[] grabbableColliders = Physics.OverlapSphere(palm.position, reachDistance, (int)grabbableLayer);
@@ -245,6 +253,12 @@ public class PhysicsHand : MonoBehaviour
 
     private void Release(InputAction.CallbackContext context)
     {
+        //hand collider change (fingers add)
+        if (fingers_collider_game_object != null)
+        {
+            fingers_collider_game_object.SetActive(true);
+        }
+
         ReleaseObject();
     }
 

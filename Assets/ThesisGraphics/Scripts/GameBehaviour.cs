@@ -23,7 +23,7 @@ public class GameBehaviour : MonoBehaviour
         original_car_rotation = car.transform.rotation;
 
         original_stick_position = stick.transform.position;
-        original_spider_rotation = stick.transform.rotation;
+        original_stick_rotation = stick.transform.rotation;
     }
 
     // Update is called once per frame

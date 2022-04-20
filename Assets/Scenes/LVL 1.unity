@@ -377,8 +377,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9400312, y: 0.915254, z: 0.90702283}
-  m_Center: {x: 0.0075533777, y: -0.042372942, z: -0.004399836}
+  m_Size: {x: 0.9400312, y: 0.7205067, z: 0.90702283}
+  m_Center: {x: 0.0075533777, y: -0.13974656, z: -0.004399836}
 --- !u!1 &297038500
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +991,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 481289564192125848, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
+    - target: {fileID: 1052421365237380433, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2884258899633054583, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3417791409242549854, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: grip_input_reference
@@ -1003,6 +1013,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -8547354368623688748, guid: c348712bda248c246b8c49b3db54643f,
         type: 3}
+    - target: {fileID: 4637231094878772241, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4637231095406091359, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4804858370805094205, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: leftHand.vrTarget
@@ -1013,6 +1033,11 @@ PrefabInstance:
       propertyPath: rightHand.vrTarget
       value: 
       objectReference: {fileID: 701098772}
+    - target: {fileID: 5174519602151125041, guid: 5d21630d350d5864ab6640b5bc17bc19,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5174519603941261372, guid: 5d21630d350d5864ab6640b5bc17bc19,
         type: 3}
       propertyPath: m_Name
@@ -3203,7 +3228,7 @@ PrefabInstance:
     - target: {fileID: 3001874648610884481, guid: a973339aca5c75e4e897ff8c57bf3997,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3001874648610884481, guid: a973339aca5c75e4e897ff8c57bf3997,
         type: 3}
@@ -3410,7 +3435,7 @@ PrefabInstance:
     - target: {fileID: 4809070171742935979, guid: 434e59b6d2b13794c842e4a8323d3923,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 434e59b6d2b13794c842e4a8323d3923, type: 3}
