@@ -52,6 +52,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "Activate/Deactivate NavAgent",
+                    "type": "Button",
+                    "id": "c63fc36a-2592-4211-bcbf-4d5113bd0ecf",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DropAll",
+                    "type": "Button",
+                    "id": "976e1c8c-2e6b-4015-bc51-6cb6544a8cf8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -272,6 +288,28 @@
                     "processors": "",
                     "groups": "Gamepad;Keyboard & Mouse and Gamepad",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9539cb15-e5e9-4739-8871-fb652be5c3f0",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Keyboard & Mouse and Gamepad",
+                    "action": "Activate/Deactivate NavAgent",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fece108-6f12-42a9-a932-8fe982e624d0",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Keyboard & Mouse and Gamepad",
+                    "action": "DropAll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
