@@ -60,24 +60,24 @@ public class GameBehaviour : MonoBehaviour
                 car.transform.position = original_car_position;
                 car.transform.rotation = new Quaternion(original_car_rotation.x, 0.0f, original_car_rotation.z, 0.0f);
 
-                glass_rb.velocity.Set(0.0f, 0.0f, 0.0f);
-                stick_rb.velocity.Set(0.0f, 0.0f, 0.0f);
                 glass.transform.position = original_glass_position;
                 glass.transform.rotation = original_glass_rotation;
                 stick.transform.position = original_stick_position;
                 stick.transform.rotation = original_stick_rotation;
+                glass_rb.velocity = Vector3.zero;
+                stick_rb.velocity = Vector3.zero;
 
                 spider.SetActive(false);
                 car.SetActive(true);
             }
             else
             {
-                glass_rb.velocity.Set(0.0f, 0.0f, 0.0f);
-                stick_rb.velocity.Set(0.0f, 0.0f, 0.0f);
                 glass.transform.position = original_glass_position;
                 glass.transform.rotation = original_glass_rotation;
                 stick.transform.position = original_stick_position;
                 stick.transform.rotation = original_stick_rotation;
+                glass_rb.velocity = Vector3.zero;
+                stick_rb.velocity = Vector3.zero;
 
                 spider.SetActive(true);
                 car.SetActive(false);
@@ -90,13 +90,13 @@ public class GameBehaviour : MonoBehaviour
         //print("glass reset");
         if (context.performed)
         {
-            glass_rb.velocity.Set(0.0f,0.0f,0.0f);
             glass.transform.position = original_glass_position;
             glass.transform.rotation = original_glass_rotation;
+            glass_rb.velocity = Vector3.zero;
 
-            stick_rb.velocity.Set(0.0f,0.0f,0.0f);
             stick.transform.position = original_stick_position;
             stick.transform.rotation = original_stick_rotation;
+            stick_rb.velocity = Vector3.zero;
         }
     }
 
@@ -115,9 +115,10 @@ public class GameBehaviour : MonoBehaviour
         {
             foreach (PhysicsHand hand in hands)
             {
-                if (hand.heldObject == gameObject)
+                if (hand.heldObject != null)
                 {
                     hand.ReleaseObject();
+                    print("drop");
                 }
             }
         }

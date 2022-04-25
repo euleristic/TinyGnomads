@@ -305,7 +305,7 @@
                 {
                     "name": "",
                     "id": "6fece108-6f12-42a9-a932-8fe982e624d0",
-                    "path": "<Keyboard>/backspace",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Keyboard & Mouse and Gamepad",

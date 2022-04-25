@@ -86,11 +86,16 @@ public class PhysicsHand : MonoBehaviour
     void Update()
     {
         ReadFollow();
-        pinch_float = trigger_input_reference.action.ReadValue<float>();
-        grabbing_float = grip_input_reference.action.ReadValue<float>();
-
-        hand_animator.SetFloat("Trigger", grabbing_float);
-        hand_animator.SetFloat("Grip", pinch_float);
+        if(trigger_input_reference != null)
+        {
+            pinch_float = trigger_input_reference.action.ReadValue<float>();
+            hand_animator.SetFloat("Grip", pinch_float);
+        }
+        if (grip_input_reference != null)
+        {
+            grabbing_float = grip_input_reference.action.ReadValue<float>();
+            hand_animator.SetFloat("Trigger", grabbing_float);
+        }
     }
 
     void FixedUpdate()
