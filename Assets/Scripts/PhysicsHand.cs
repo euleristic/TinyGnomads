@@ -28,6 +28,9 @@ public class PhysicsHand : MonoBehaviour
     [SerializeField] float reachDistance = 0.1f, jointDistance = 0.05f;
     public LayerMask grabbableLayer;
 
+    //fingers collider
+    [SerializeField] GameObject fingers_collider_game_object;
+
     private bool isGrabbing;
     [System.NonSerialized] public GameObject heldObject;
     public Collider heldCollider;
@@ -39,8 +42,9 @@ public class PhysicsHand : MonoBehaviour
 
 
     //animation
-    float grabbing_float;
+    float grabbing_float, pinch_float;
     [SerializeField] InputActionReference trigger_input_reference;
+    [SerializeField] InputActionReference grip_input_reference;
     Animator hand_animator;
 
     Quaternion Modulate360(Quaternion q)
@@ -82,8 +86,16 @@ public class PhysicsHand : MonoBehaviour
     void Update()
     {
         ReadFollow();
-        grabbing_float = trigger_input_reference.action.ReadValue<float>();
-        hand_animator.SetFloat("Trigger", grabbing_float);
+        if(trigger_input_reference != null)
+        {
+            pinch_float = trigger_input_reference.action.ReadValue<float>();
+            hand_animator.SetFloat("Grip", pinch_float);
+        }
+        if (grip_input_reference != null)
+        {
+            grabbing_float = grip_input_reference.action.ReadValue<float>();
+            hand_animator.SetFloat("Trigger", grabbing_float);
+        }
     }
 
     void FixedUpdate()
@@ -147,6 +159,11 @@ public class PhysicsHand : MonoBehaviour
 
     private void Grab(InputAction.CallbackContext context)
     {
+        //hand collider change (fingers remove)
+        if(fingers_collider_game_object != null)
+        {
+            fingers_collider_game_object.SetActive(false);
+        }
 
         if (isGrabbing || heldObject) return;
         Collider[] grabbableColliders = Physics.OverlapSphere(palm.position, reachDistance, (int)grabbableLayer);
@@ -210,7 +227,7 @@ public class PhysicsHand : MonoBehaviour
         objectBody.velocity = Vector3.zero;
         objectBody.angularVelocity = Vector3.zero;
 
-        objectBody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         objectBody.interpolation = RigidbodyInterpolation.Interpolate;
 
         //attach joints
@@ -241,6 +258,12 @@ public class PhysicsHand : MonoBehaviour
 
     private void Release(InputAction.CallbackContext context)
     {
+        //hand collider change (fingers add)
+        if (fingers_collider_game_object != null)
+        {
+            fingers_collider_game_object.SetActive(true);
+        }
+
         ReleaseObject();
     }
 
@@ -269,7 +292,7 @@ public class PhysicsHand : MonoBehaviour
             //    objectBody.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
             //}
 
-            objectBody.collisionDetectionMode = CollisionDetectionMode.Discrete;
+            objectBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             objectBody.interpolation = RigidbodyInterpolation.None;
             heldObject = null;
         }

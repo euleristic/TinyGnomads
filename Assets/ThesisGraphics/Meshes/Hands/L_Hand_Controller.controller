@@ -176,7 +176,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 40c9c2e4986b1ce4ea23dd08d6bb925e, type: 2}
+    m_Motion: {fileID: 7400000, guid: a4528f6bc903f3547bb3407728f0271b, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -402,7 +402,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 40c9c2e4986b1ce4ea23dd08d6bb925e, type: 2}
+    m_Motion: {fileID: 7400000, guid: a4528f6bc903f3547bb3407728f0271b, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -551,7 +551,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blend Tree
-  m_Speed: 10
+  m_Speed: 15
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3657562642130015404}

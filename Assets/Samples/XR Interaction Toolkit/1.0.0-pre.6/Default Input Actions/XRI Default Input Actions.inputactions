@@ -400,9 +400,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Animate Hand",
+                    "name": "CloseHandAnim",
                     "type": "Value",
-                    "id": "d233fb2c-5fee-46d4-9e94-cb9199af4010",
+                    "id": "5b7e5967-44e0-40f2-8f82-374b22173bec",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PinchAnim",
+                    "type": "Value",
+                    "id": "96c85f70-c9ff-483c-a36d-f04d22ff98d9",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
@@ -738,12 +746,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a21e2154-030a-4e26-8b16-eff4d3f08517",
-                    "path": "<XRController>{LeftHand}/trigger",
+                    "id": "306e4143-48bf-4413-859b-32517fe48bcc",
+                    "path": "<XRController>{LeftHand}/gripButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Animate Hand",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -755,6 +763,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5bb1d868-ec53-4112-9a00-0b308dd359e6",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PinchAnim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f155a401-6f82-4d40-b04c-240454f3a314",
+                    "path": "<XRController>{LeftHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "CloseHandAnim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -869,7 +899,15 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Animate Hand",
+                    "name": "CloseHandAnim",
+                    "type": "Value",
+                    "id": "e105841a-0bac-4f2b-92ca-966bc01852c3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "PinchAnim",
                     "type": "Value",
                     "id": "df3ebf73-e7fd-455c-9ae0-c1509e1f12ad",
                     "expectedControlType": "Axis",
@@ -1185,19 +1223,19 @@
                 },
                 {
                     "name": "",
-                    "id": "c60de17e-c82e-4c1e-99d4-a5c84a7ac19d",
-                    "path": "<XRController>{RightHand}/trigger",
+                    "id": "1ce80054-410d-4112-a332-50faa7fb4f23",
+                    "path": "<XRController>{RightHand}/triggerPressed",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "Animate Hand",
+                    "action": "Select",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "1ce80054-410d-4112-a332-50faa7fb4f23",
-                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "id": "7d2934ec-98e2-42b8-bcfd-4ae159efd35b",
+                    "path": "<XRController>{RightHand}/gripButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
@@ -1213,6 +1251,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Restart",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56b563c3-eb14-4c4a-89f3-1133293fb14c",
+                    "path": "<XRController>{RightHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "CloseHandAnim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c60de17e-c82e-4c1e-99d4-a5c84a7ac19d",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "PinchAnim",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
