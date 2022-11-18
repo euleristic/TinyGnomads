@@ -37,4 +37,7 @@ public class HapticInteractable : MonoBehaviour
     }
 
     //Check Valem's tutorial on haptics, we need to add decide what events in the prototype causes haptic feedback, and set it up here in the start function.
+    // https://www.youtube.com/watch?v=HxqnDww2Fjo
+    // Around 6:49 in the video is the final step, although we need to write our own code based on the haptic events we want to implement.
+
 }
